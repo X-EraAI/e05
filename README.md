@@ -1,12 +1,16 @@
-# e05
+# E0.5
 
-**Language-conditioned action prediction with auxiliary future geometry reconstruction.**
+**From Reconstructive to Future-Predictive 3D Foundations for Robotic World-Action Modeling**
+
+**X-Era AI Lab**
+
+[Paper](https://arxiv.org/pdf/2610.36011) · [Project Page](https://www.x-era.ai/e05/index.html)
 
 English | [简体中文](README_zh-CN.md)
 
-e05 is a visuomotor model for RoboTwin manipulation tasks. It connects a language-conditioned VGGT backbone to an ActionDiT action predictor through independent bridge projections. Given three RGB views, a language instruction, and the current robot state, it predicts a 32-step action chunk. Future geometry reconstruction provides auxiliary training supervision and optional inference outputs.
+Official implementation of **E0.5**, a world-action model that places 3D foundation models at the core of robotic perception and control. Conditioned on visual observations, language instructions, and robot states, E0.5 jointly predicts robot actions and future 3D geometry, extending geometric reconstruction to the prediction of how the world evolves through interaction.
 
-This repository provides the model implementation, training configurations, standalone inference, and RoboTwin evaluation code. Training data, model weights, and simulator assets are external resources and are not included in the Git repository. No release archive is required to use the code once those resources are available.
+This repository provides the E0.5 implementation, training and inference workflows, and RoboTwin evaluation tools. Released resources include the RoboTwin policy checkpoint, processed training data, and an embodied-pretrained VGGT backbone for real-robot adaptation. The Python package and configuration entrypoints use the name `e05`; resource requirements and usage instructions are detailed below.
 
 ## Model overview
 
