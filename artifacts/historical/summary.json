@@ -1,0 +1,1289 @@
+{
+  "per_task": [
+    {
+      "task_name": "adjust_bottle",
+      "clean_success_rate": 1.0,
+      "random_success_rate": 0.7
+    },
+    {
+      "task_name": "beat_block_hammer",
+      "clean_success_rate": 0.99,
+      "random_success_rate": 0.39
+    },
+    {
+      "task_name": "blocks_ranking_rgb",
+      "clean_success_rate": 0.98,
+      "random_success_rate": 0.7
+    },
+    {
+      "task_name": "blocks_ranking_size",
+      "clean_success_rate": 0.84,
+      "random_success_rate": 0.35
+    },
+    {
+      "task_name": "click_alarmclock",
+      "clean_success_rate": 0.9,
+      "random_success_rate": 0.74
+    },
+    {
+      "task_name": "click_bell",
+      "clean_success_rate": 1.0,
+      "random_success_rate": 0.62
+    },
+    {
+      "task_name": "dump_bin_bigbin",
+      "clean_success_rate": 0.95,
+      "random_success_rate": 0.83
+    },
+    {
+      "task_name": "grab_roller",
+      "clean_success_rate": 1.0,
+      "random_success_rate": 0.8
+    },
+    {
+      "task_name": "handover_block",
+      "clean_success_rate": 0.98,
+      "random_success_rate": 0.28
+    },
+    {
+      "task_name": "handover_mic",
+      "clean_success_rate": 0.97,
+      "random_success_rate": 0.31
+    },
+    {
+      "task_name": "hanging_mug",
+      "clean_success_rate": 0.4,
+      "random_success_rate": 0.24
+    },
+    {
+      "task_name": "lift_pot",
+      "clean_success_rate": 0.99,
+      "random_success_rate": 0.05
+    },
+    {
+      "task_name": "move_can_pot",
+      "clean_success_rate": 0.9,
+      "random_success_rate": 0.22
+    },
+    {
+      "task_name": "move_pillbottle_pad",
+      "clean_success_rate": 0.96,
+      "random_success_rate": 0.39
+    },
+    {
+      "task_name": "move_playingcard_away",
+      "clean_success_rate": 1.0,
+      "random_success_rate": 0.17
+    },
+    {
+      "task_name": "move_stapler_pad",
+      "clean_success_rate": 0.84,
+      "random_success_rate": 0.17
+    },
+    {
+      "task_name": "open_laptop",
+      "clean_success_rate": 0.96,
+      "random_success_rate": 0.22
+    },
+    {
+      "task_name": "open_microwave",
+      "clean_success_rate": 0.55,
+      "random_success_rate": 0.1
+    },
+    {
+      "task_name": "pick_diverse_bottles",
+      "clean_success_rate": 0.85,
+      "random_success_rate": 0.64
+    },
+    {
+      "task_name": "pick_dual_bottles",
+      "clean_success_rate": 0.99,
+      "random_success_rate": 0.77
+    },
+    {
+      "task_name": "place_a2b_left",
+      "clean_success_rate": 0.73,
+      "random_success_rate": 0.22
+    },
+    {
+      "task_name": "place_a2b_right",
+      "clean_success_rate": 0.79,
+      "random_success_rate": 0.25
+    },
+    {
+      "task_name": "place_bread_basket",
+      "clean_success_rate": 0.94,
+      "random_success_rate": 0.81
+    },
+    {
+      "task_name": "place_bread_skillet",
+      "clean_success_rate": 0.88,
+      "random_success_rate": 0.66
+    },
+    {
+      "task_name": "place_burger_fries",
+      "clean_success_rate": 0.96,
+      "random_success_rate": 0.91
+    },
+    {
+      "task_name": "place_can_basket",
+      "clean_success_rate": 0.77,
+      "random_success_rate": 0.46
+    },
+    {
+      "task_name": "place_cans_plasticbox",
+      "clean_success_rate": 0.99,
+      "random_success_rate": 0.87
+    },
+    {
+      "task_name": "place_container_plate",
+      "clean_success_rate": 0.97,
+      "random_success_rate": 0.71
+    },
+    {
+      "task_name": "place_dual_shoes",
+      "clean_success_rate": 0.8,
+      "random_success_rate": 0.59
+    },
+    {
+      "task_name": "place_empty_cup",
+      "clean_success_rate": 0.99,
+      "random_success_rate": 0.37
+    },
+    {
+      "task_name": "place_fan",
+      "clean_success_rate": 0.89,
+      "random_success_rate": 0.11
+    },
+    {
+      "task_name": "place_mouse_pad",
+      "clean_success_rate": 0.92,
+      "random_success_rate": 0.1
+    },
+    {
+      "task_name": "place_object_basket",
+      "clean_success_rate": 0.91,
+      "random_success_rate": 0.65
+    },
+    {
+      "task_name": "place_object_scale",
+      "clean_success_rate": 0.92,
+      "random_success_rate": 0.33
+    },
+    {
+      "task_name": "place_object_stand",
+      "clean_success_rate": 0.95,
+      "random_success_rate": 0.68
+    },
+    {
+      "task_name": "place_phone_stand",
+      "clean_success_rate": 0.93,
+      "random_success_rate": 0.44
+    },
+    {
+      "task_name": "place_shoe",
+      "clean_success_rate": 0.93,
+      "random_success_rate": 0.67
+    },
+    {
+      "task_name": "press_stapler",
+      "clean_success_rate": 0.84,
+      "random_success_rate": 0.44
+    },
+    {
+      "task_name": "put_bottles_dustbin",
+      "clean_success_rate": 0.93,
+      "random_success_rate": 0.7816091954022989
+    },
+    {
+      "task_name": "put_object_cabinet",
+      "clean_success_rate": 0.49,
+      "random_success_rate": 0.32432432432432434
+    },
+    {
+      "task_name": "rotate_qrcode",
+      "clean_success_rate": 0.89,
+      "random_success_rate": 0.04
+    },
+    {
+      "task_name": "scan_object",
+      "clean_success_rate": 0.88,
+      "random_success_rate": 0.51
+    },
+    {
+      "task_name": "shake_bottle",
+      "clean_success_rate": 1.0,
+      "random_success_rate": 0.82
+    },
+    {
+      "task_name": "shake_bottle_horizontally",
+      "clean_success_rate": 1.0,
+      "random_success_rate": 0.74
+    },
+    {
+      "task_name": "stack_blocks_three",
+      "clean_success_rate": 0.94,
+      "random_success_rate": 0.67
+    },
+    {
+      "task_name": "stack_blocks_two",
+      "clean_success_rate": 1.0,
+      "random_success_rate": 0.78
+    },
+    {
+      "task_name": "stack_bowls_three",
+      "clean_success_rate": 0.88,
+      "random_success_rate": 0.76
+    },
+    {
+      "task_name": "stack_bowls_two",
+      "clean_success_rate": 0.95,
+      "random_success_rate": 0.87
+    },
+    {
+      "task_name": "stamp_seal",
+      "clean_success_rate": 0.95,
+      "random_success_rate": 0.18
+    },
+    {
+      "task_name": "turn_switch",
+      "clean_success_rate": 0.67,
+      "random_success_rate": 0.28
+    }
+  ],
+  "overall": {
+    "clean_mean_success_rate": 0.8948,
+    "random_mean_success_rate": 0.4943186703945324
+  },
+  "phase_statistics": {
+    "clean": {
+      "task_count": 50,
+      "fully_evaluated_tasks": 50,
+      "accepted_partial_tasks": 0,
+      "successes": 4474,
+      "evaluated_episodes": 5000,
+      "planned_episodes": 5000,
+      "macro_mean_success_rate": 0.8948,
+      "episode_weighted_success_rate": 0.8948
+    },
+    "random": {
+      "task_count": 50,
+      "fully_evaluated_tasks": 48,
+      "accepted_partial_tasks": 2,
+      "successes": 2453,
+      "evaluated_episodes": 4961,
+      "planned_episodes": 5000,
+      "macro_mean_success_rate": 0.4943186703945324,
+      "episode_weighted_success_rate": 0.49445676274944567
+    }
+  },
+  "episode_details": [
+    {
+      "task_name": "adjust_bottle",
+      "phase": "clean",
+      "successes": 100,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 1.0,
+      "status": "completed",
+      "source": "adjust_bottle/_result_clean.txt"
+    },
+    {
+      "task_name": "adjust_bottle",
+      "phase": "random",
+      "successes": 70,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.7,
+      "status": "completed",
+      "source": "adjust_bottle/_result_random.txt"
+    },
+    {
+      "task_name": "beat_block_hammer",
+      "phase": "clean",
+      "successes": 99,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.99,
+      "status": "completed",
+      "source": "beat_block_hammer/_result_clean.txt"
+    },
+    {
+      "task_name": "beat_block_hammer",
+      "phase": "random",
+      "successes": 39,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.39,
+      "status": "completed",
+      "source": "beat_block_hammer/_result_random.txt"
+    },
+    {
+      "task_name": "blocks_ranking_rgb",
+      "phase": "clean",
+      "successes": 98,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.98,
+      "status": "completed",
+      "source": "blocks_ranking_rgb/_result_clean.txt"
+    },
+    {
+      "task_name": "blocks_ranking_rgb",
+      "phase": "random",
+      "successes": 70,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.7,
+      "status": "completed",
+      "source": "blocks_ranking_rgb/_result_random.txt"
+    },
+    {
+      "task_name": "blocks_ranking_size",
+      "phase": "clean",
+      "successes": 84,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.84,
+      "status": "completed",
+      "source": "blocks_ranking_size/_result_clean.txt"
+    },
+    {
+      "task_name": "blocks_ranking_size",
+      "phase": "random",
+      "successes": 35,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.35,
+      "status": "completed",
+      "source": "blocks_ranking_size/_result_random.txt"
+    },
+    {
+      "task_name": "click_alarmclock",
+      "phase": "clean",
+      "successes": 90,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.9,
+      "status": "completed",
+      "source": "click_alarmclock/_result_clean.txt"
+    },
+    {
+      "task_name": "click_alarmclock",
+      "phase": "random",
+      "successes": 74,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.74,
+      "status": "completed",
+      "source": "click_alarmclock/_result_random.txt"
+    },
+    {
+      "task_name": "click_bell",
+      "phase": "clean",
+      "successes": 100,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 1.0,
+      "status": "completed",
+      "source": "click_bell/_result_clean.txt"
+    },
+    {
+      "task_name": "click_bell",
+      "phase": "random",
+      "successes": 62,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.62,
+      "status": "completed",
+      "source": "click_bell/_result_random.txt"
+    },
+    {
+      "task_name": "dump_bin_bigbin",
+      "phase": "clean",
+      "successes": 95,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.95,
+      "status": "completed",
+      "source": "dump_bin_bigbin/_result_clean.txt"
+    },
+    {
+      "task_name": "dump_bin_bigbin",
+      "phase": "random",
+      "successes": 83,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.83,
+      "status": "completed",
+      "source": "dump_bin_bigbin/_result_random.txt"
+    },
+    {
+      "task_name": "grab_roller",
+      "phase": "clean",
+      "successes": 100,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 1.0,
+      "status": "completed",
+      "source": "grab_roller/_result_clean.txt"
+    },
+    {
+      "task_name": "grab_roller",
+      "phase": "random",
+      "successes": 80,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.8,
+      "status": "completed",
+      "source": "grab_roller/_result_random.txt"
+    },
+    {
+      "task_name": "handover_block",
+      "phase": "clean",
+      "successes": 98,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.98,
+      "status": "completed",
+      "source": "handover_block/_result_clean.txt"
+    },
+    {
+      "task_name": "handover_block",
+      "phase": "random",
+      "successes": 28,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.28,
+      "status": "completed",
+      "source": "handover_block/_result_random.txt"
+    },
+    {
+      "task_name": "handover_mic",
+      "phase": "clean",
+      "successes": 97,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.97,
+      "status": "completed",
+      "source": "handover_mic/_result_clean.txt"
+    },
+    {
+      "task_name": "handover_mic",
+      "phase": "random",
+      "successes": 31,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.31,
+      "status": "completed",
+      "source": "handover_mic/_result_random.txt"
+    },
+    {
+      "task_name": "hanging_mug",
+      "phase": "clean",
+      "successes": 40,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.4,
+      "status": "completed",
+      "source": "hanging_mug/_result_clean.txt"
+    },
+    {
+      "task_name": "hanging_mug",
+      "phase": "random",
+      "successes": 24,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.24,
+      "status": "completed",
+      "source": "hanging_mug/_result_random.txt"
+    },
+    {
+      "task_name": "lift_pot",
+      "phase": "clean",
+      "successes": 99,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.99,
+      "status": "completed",
+      "source": "lift_pot/_result_clean.txt"
+    },
+    {
+      "task_name": "lift_pot",
+      "phase": "random",
+      "successes": 5,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.05,
+      "status": "completed",
+      "source": "lift_pot/_result_random.txt"
+    },
+    {
+      "task_name": "move_can_pot",
+      "phase": "clean",
+      "successes": 90,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.9,
+      "status": "completed",
+      "source": "move_can_pot/_result_clean.txt"
+    },
+    {
+      "task_name": "move_can_pot",
+      "phase": "random",
+      "successes": 22,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.22,
+      "status": "completed",
+      "source": "move_can_pot/_result_random.txt"
+    },
+    {
+      "task_name": "move_pillbottle_pad",
+      "phase": "clean",
+      "successes": 96,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.96,
+      "status": "completed",
+      "source": "move_pillbottle_pad/_result_clean.txt"
+    },
+    {
+      "task_name": "move_pillbottle_pad",
+      "phase": "random",
+      "successes": 39,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.39,
+      "status": "completed",
+      "source": "move_pillbottle_pad/_result_random.txt"
+    },
+    {
+      "task_name": "move_playingcard_away",
+      "phase": "clean",
+      "successes": 100,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 1.0,
+      "status": "completed",
+      "source": "move_playingcard_away/_result_clean.txt"
+    },
+    {
+      "task_name": "move_playingcard_away",
+      "phase": "random",
+      "successes": 17,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.17,
+      "status": "completed",
+      "source": "move_playingcard_away/_result_random.txt"
+    },
+    {
+      "task_name": "move_stapler_pad",
+      "phase": "clean",
+      "successes": 84,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.84,
+      "status": "completed",
+      "source": "move_stapler_pad/_result_clean.txt"
+    },
+    {
+      "task_name": "move_stapler_pad",
+      "phase": "random",
+      "successes": 17,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.17,
+      "status": "completed",
+      "source": "move_stapler_pad/_result_random.txt"
+    },
+    {
+      "task_name": "open_laptop",
+      "phase": "clean",
+      "successes": 96,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.96,
+      "status": "completed",
+      "source": "open_laptop/_result_clean.txt"
+    },
+    {
+      "task_name": "open_laptop",
+      "phase": "random",
+      "successes": 22,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.22,
+      "status": "completed",
+      "source": "open_laptop/_result_random.txt"
+    },
+    {
+      "task_name": "open_microwave",
+      "phase": "clean",
+      "successes": 55,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.55,
+      "status": "completed",
+      "source": "open_microwave/_result_clean.txt"
+    },
+    {
+      "task_name": "open_microwave",
+      "phase": "random",
+      "successes": 10,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.1,
+      "status": "completed",
+      "source": "open_microwave/_result_random.txt"
+    },
+    {
+      "task_name": "pick_diverse_bottles",
+      "phase": "clean",
+      "successes": 85,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.85,
+      "status": "completed",
+      "source": "pick_diverse_bottles/_result_clean.txt"
+    },
+    {
+      "task_name": "pick_diverse_bottles",
+      "phase": "random",
+      "successes": 64,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.64,
+      "status": "completed",
+      "source": "pick_diverse_bottles/_result_random.txt"
+    },
+    {
+      "task_name": "pick_dual_bottles",
+      "phase": "clean",
+      "successes": 99,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.99,
+      "status": "completed",
+      "source": "pick_dual_bottles/_result_clean.txt"
+    },
+    {
+      "task_name": "pick_dual_bottles",
+      "phase": "random",
+      "successes": 77,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.77,
+      "status": "completed",
+      "source": "pick_dual_bottles/_result_random.txt"
+    },
+    {
+      "task_name": "place_a2b_left",
+      "phase": "clean",
+      "successes": 73,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.73,
+      "status": "completed",
+      "source": "place_a2b_left/_result_clean.txt"
+    },
+    {
+      "task_name": "place_a2b_left",
+      "phase": "random",
+      "successes": 22,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.22,
+      "status": "completed",
+      "source": "place_a2b_left/_result_random.txt"
+    },
+    {
+      "task_name": "place_a2b_right",
+      "phase": "clean",
+      "successes": 79,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.79,
+      "status": "completed",
+      "source": "place_a2b_right/_result_clean.txt"
+    },
+    {
+      "task_name": "place_a2b_right",
+      "phase": "random",
+      "successes": 25,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.25,
+      "status": "completed",
+      "source": "place_a2b_right/_result_random.txt"
+    },
+    {
+      "task_name": "place_bread_basket",
+      "phase": "clean",
+      "successes": 94,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.94,
+      "status": "completed",
+      "source": "place_bread_basket/_result_clean.txt"
+    },
+    {
+      "task_name": "place_bread_basket",
+      "phase": "random",
+      "successes": 81,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.81,
+      "status": "completed",
+      "source": "place_bread_basket/_result_random.txt"
+    },
+    {
+      "task_name": "place_bread_skillet",
+      "phase": "clean",
+      "successes": 88,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.88,
+      "status": "completed",
+      "source": "place_bread_skillet/_result_clean.txt"
+    },
+    {
+      "task_name": "place_bread_skillet",
+      "phase": "random",
+      "successes": 66,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.66,
+      "status": "completed",
+      "source": "place_bread_skillet/_result_random.txt"
+    },
+    {
+      "task_name": "place_burger_fries",
+      "phase": "clean",
+      "successes": 96,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.96,
+      "status": "completed",
+      "source": "place_burger_fries/_result_clean.txt"
+    },
+    {
+      "task_name": "place_burger_fries",
+      "phase": "random",
+      "successes": 91,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.91,
+      "status": "completed",
+      "source": "place_burger_fries/_result_random.txt"
+    },
+    {
+      "task_name": "place_can_basket",
+      "phase": "clean",
+      "successes": 77,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.77,
+      "status": "completed",
+      "source": "place_can_basket/_result_clean.txt"
+    },
+    {
+      "task_name": "place_can_basket",
+      "phase": "random",
+      "successes": 46,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.46,
+      "status": "completed",
+      "source": "place_can_basket/_result_random.txt"
+    },
+    {
+      "task_name": "place_cans_plasticbox",
+      "phase": "clean",
+      "successes": 99,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.99,
+      "status": "completed",
+      "source": "place_cans_plasticbox/_result_clean.txt"
+    },
+    {
+      "task_name": "place_cans_plasticbox",
+      "phase": "random",
+      "successes": 87,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.87,
+      "status": "completed",
+      "source": "place_cans_plasticbox/_result_random.txt"
+    },
+    {
+      "task_name": "place_container_plate",
+      "phase": "clean",
+      "successes": 97,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.97,
+      "status": "completed",
+      "source": "place_container_plate/_result_clean.txt"
+    },
+    {
+      "task_name": "place_container_plate",
+      "phase": "random",
+      "successes": 71,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.71,
+      "status": "completed",
+      "source": "place_container_plate/_result_random.txt"
+    },
+    {
+      "task_name": "place_dual_shoes",
+      "phase": "clean",
+      "successes": 80,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.8,
+      "status": "completed",
+      "source": "place_dual_shoes/_result_clean.txt"
+    },
+    {
+      "task_name": "place_dual_shoes",
+      "phase": "random",
+      "successes": 59,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.59,
+      "status": "completed",
+      "source": "place_dual_shoes/_result_random.txt"
+    },
+    {
+      "task_name": "place_empty_cup",
+      "phase": "clean",
+      "successes": 99,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.99,
+      "status": "completed",
+      "source": "place_empty_cup/_result_clean.txt"
+    },
+    {
+      "task_name": "place_empty_cup",
+      "phase": "random",
+      "successes": 37,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.37,
+      "status": "completed",
+      "source": "place_empty_cup/_result_random.txt"
+    },
+    {
+      "task_name": "place_fan",
+      "phase": "clean",
+      "successes": 89,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.89,
+      "status": "completed",
+      "source": "place_fan/_result_clean.txt"
+    },
+    {
+      "task_name": "place_fan",
+      "phase": "random",
+      "successes": 11,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.11,
+      "status": "completed",
+      "source": "place_fan/_result_random.txt"
+    },
+    {
+      "task_name": "place_mouse_pad",
+      "phase": "clean",
+      "successes": 92,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.92,
+      "status": "completed",
+      "source": "place_mouse_pad/_result_clean.txt"
+    },
+    {
+      "task_name": "place_mouse_pad",
+      "phase": "random",
+      "successes": 10,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.1,
+      "status": "completed",
+      "source": "place_mouse_pad/_result_random.txt"
+    },
+    {
+      "task_name": "place_object_basket",
+      "phase": "clean",
+      "successes": 91,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.91,
+      "status": "completed",
+      "source": "place_object_basket/_result_clean.txt"
+    },
+    {
+      "task_name": "place_object_basket",
+      "phase": "random",
+      "successes": 65,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.65,
+      "status": "completed",
+      "source": "place_object_basket/_result_random.txt"
+    },
+    {
+      "task_name": "place_object_scale",
+      "phase": "clean",
+      "successes": 92,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.92,
+      "status": "completed",
+      "source": "place_object_scale/_result_clean.txt"
+    },
+    {
+      "task_name": "place_object_scale",
+      "phase": "random",
+      "successes": 33,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.33,
+      "status": "completed",
+      "source": "place_object_scale/_result_random.txt"
+    },
+    {
+      "task_name": "place_object_stand",
+      "phase": "clean",
+      "successes": 95,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.95,
+      "status": "completed",
+      "source": "place_object_stand/_result_clean.txt"
+    },
+    {
+      "task_name": "place_object_stand",
+      "phase": "random",
+      "successes": 68,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.68,
+      "status": "completed",
+      "source": "place_object_stand/_result_random.txt"
+    },
+    {
+      "task_name": "place_phone_stand",
+      "phase": "clean",
+      "successes": 93,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.93,
+      "status": "completed",
+      "source": "place_phone_stand/_result_clean.txt"
+    },
+    {
+      "task_name": "place_phone_stand",
+      "phase": "random",
+      "successes": 44,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.44,
+      "status": "completed",
+      "source": "place_phone_stand/_result_random.txt"
+    },
+    {
+      "task_name": "place_shoe",
+      "phase": "clean",
+      "successes": 93,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.93,
+      "status": "completed",
+      "source": "place_shoe/_result_clean.txt"
+    },
+    {
+      "task_name": "place_shoe",
+      "phase": "random",
+      "successes": 67,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.67,
+      "status": "completed",
+      "source": "place_shoe/_result_random.txt"
+    },
+    {
+      "task_name": "press_stapler",
+      "phase": "clean",
+      "successes": 84,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.84,
+      "status": "completed",
+      "source": "press_stapler/_result_clean.txt"
+    },
+    {
+      "task_name": "press_stapler",
+      "phase": "random",
+      "successes": 44,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.44,
+      "status": "completed",
+      "source": "press_stapler/_result_random.txt"
+    },
+    {
+      "task_name": "put_bottles_dustbin",
+      "phase": "clean",
+      "successes": 93,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.93,
+      "status": "completed",
+      "source": "put_bottles_dustbin/_result_clean.txt"
+    },
+    {
+      "task_name": "put_bottles_dustbin",
+      "phase": "random",
+      "successes": 68,
+      "evaluated_episodes": 87,
+      "planned_episodes": 100,
+      "success_rate": 0.7816091954022989,
+      "status": "accepted_partial_as_final",
+      "source": "eval_put_bottles_dustbin_20261022_044505.log"
+    },
+    {
+      "task_name": "put_object_cabinet",
+      "phase": "clean",
+      "successes": 49,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.49,
+      "status": "completed",
+      "source": "put_object_cabinet/_result_clean.txt"
+    },
+    {
+      "task_name": "put_object_cabinet",
+      "phase": "random",
+      "successes": 24,
+      "evaluated_episodes": 74,
+      "planned_episodes": 100,
+      "success_rate": 0.32432432432432434,
+      "status": "accepted_partial_as_final",
+      "source": "eval_put_object_cabinet_20261022_043921.log"
+    },
+    {
+      "task_name": "rotate_qrcode",
+      "phase": "clean",
+      "successes": 89,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.89,
+      "status": "completed",
+      "source": "rotate_qrcode/_result_clean.txt"
+    },
+    {
+      "task_name": "rotate_qrcode",
+      "phase": "random",
+      "successes": 4,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.04,
+      "status": "completed",
+      "source": "rotate_qrcode/_result_random.txt"
+    },
+    {
+      "task_name": "scan_object",
+      "phase": "clean",
+      "successes": 88,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.88,
+      "status": "completed",
+      "source": "scan_object/_result_clean.txt"
+    },
+    {
+      "task_name": "scan_object",
+      "phase": "random",
+      "successes": 51,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.51,
+      "status": "completed",
+      "source": "scan_object/_result_random.txt"
+    },
+    {
+      "task_name": "shake_bottle",
+      "phase": "clean",
+      "successes": 100,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 1.0,
+      "status": "completed",
+      "source": "shake_bottle/_result_clean.txt"
+    },
+    {
+      "task_name": "shake_bottle",
+      "phase": "random",
+      "successes": 82,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.82,
+      "status": "completed",
+      "source": "shake_bottle/_result_random.txt"
+    },
+    {
+      "task_name": "shake_bottle_horizontally",
+      "phase": "clean",
+      "successes": 100,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 1.0,
+      "status": "completed",
+      "source": "shake_bottle_horizontally/_result_clean.txt"
+    },
+    {
+      "task_name": "shake_bottle_horizontally",
+      "phase": "random",
+      "successes": 74,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.74,
+      "status": "completed",
+      "source": "shake_bottle_horizontally/_result_random.txt"
+    },
+    {
+      "task_name": "stack_blocks_three",
+      "phase": "clean",
+      "successes": 94,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.94,
+      "status": "completed",
+      "source": "stack_blocks_three/_result_clean.txt"
+    },
+    {
+      "task_name": "stack_blocks_three",
+      "phase": "random",
+      "successes": 67,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.67,
+      "status": "completed",
+      "source": "stack_blocks_three/_result_random.txt"
+    },
+    {
+      "task_name": "stack_blocks_two",
+      "phase": "clean",
+      "successes": 100,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 1.0,
+      "status": "completed",
+      "source": "stack_blocks_two/_result_clean.txt"
+    },
+    {
+      "task_name": "stack_blocks_two",
+      "phase": "random",
+      "successes": 78,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.78,
+      "status": "completed",
+      "source": "stack_blocks_two/_result_random.txt"
+    },
+    {
+      "task_name": "stack_bowls_three",
+      "phase": "clean",
+      "successes": 88,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.88,
+      "status": "completed",
+      "source": "stack_bowls_three/_result_clean.txt"
+    },
+    {
+      "task_name": "stack_bowls_three",
+      "phase": "random",
+      "successes": 76,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.76,
+      "status": "completed",
+      "source": "stack_bowls_three/_result_random.txt"
+    },
+    {
+      "task_name": "stack_bowls_two",
+      "phase": "clean",
+      "successes": 95,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.95,
+      "status": "completed",
+      "source": "stack_bowls_two/_result_clean.txt"
+    },
+    {
+      "task_name": "stack_bowls_two",
+      "phase": "random",
+      "successes": 87,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.87,
+      "status": "completed",
+      "source": "stack_bowls_two/_result_random.txt"
+    },
+    {
+      "task_name": "stamp_seal",
+      "phase": "clean",
+      "successes": 95,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.95,
+      "status": "completed",
+      "source": "stamp_seal/_result_clean.txt"
+    },
+    {
+      "task_name": "stamp_seal",
+      "phase": "random",
+      "successes": 18,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.18,
+      "status": "completed",
+      "source": "stamp_seal/_result_random.txt"
+    },
+    {
+      "task_name": "turn_switch",
+      "phase": "clean",
+      "successes": 67,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.67,
+      "status": "completed",
+      "source": "turn_switch/_result_clean.txt"
+    },
+    {
+      "task_name": "turn_switch",
+      "phase": "random",
+      "successes": 28,
+      "evaluated_episodes": 100,
+      "planned_episodes": 100,
+      "success_rate": 0.28,
+      "status": "completed",
+      "source": "turn_switch/_result_random.txt"
+    }
+  ],
+  "metadata": {
+    "checkpoint": "109000_fix_lang_mask",
+    "generated_at": "2026-10-22T10:04:49.280827+08:00",
+    "finalization": "Remaining partial random evaluations accepted as final.",
+    "rate_policy": "Each task uses successes / actual evaluated episodes. Overall mean is an unweighted mean over 50 tasks. Unevaluated episodes excluded.",
+    "raw_results_modified": false
+  }
+}

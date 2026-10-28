@@ -1,0 +1,360 @@
+output_dir: ${oc.env:E05_OUTPUT_DIR,./runs/train}
+batch_size: 8
+num_workers: 8
+persistent_workers: true
+prefetch_factor: 2
+pin_memory: null
+pin_memory_device: null
+lr_scheduler_type: cosine
+learning_rate: 0.0001
+vggt_learning_rate: 0.0001
+num_epochs: 70
+max_steps: null
+stop_after_steps: null
+log_every: 10
+save_every: 1000
+save_weights_every: null
+save_state_every: null
+eval_every: 0
+eval_rollout_every: 0
+eval_num_inference_steps: 10
+gradient_accumulation_steps: 1
+mixed_precision: bf16
+optimizer_grouping: legacy
+vggt_fp32_storage_bf16_compute: false
+seed: 42
+max_grad_norm: 1.0
+weight_decay: 0.01
+verify_reconstruction_gradients: false
+resume: null
+overwrite: false
+precompute_batch_size: 8
+depth_cache_shard_size: 256
+wandb:
+  enabled: false
+  workspace: null
+  project: E05
+  name: e05
+  id: null
+  resume: null
+  group: null
+  mode: offline
+data:
+  train:
+    reconstruction_is_synthetic: true
+    _target_: fastwam.datasets.lerobot.robot_video_dataset.RobotVideoDataset
+    dataset_dirs:
+    - ${oc.env:E05_DATA_ROOT,./data}/robotwin_clean_xera_v21
+    shape_meta:
+      images:
+      - key: cam_high
+        raw_shape:
+        - 3
+        - 240
+        - 320
+        shape:
+        - 3
+        - 240
+        - 320
+      - key: cam_left_wrist
+        raw_shape:
+        - 3
+        - 240
+        - 320
+        shape:
+        - 3
+        - 240
+        - 320
+      - key: cam_right_wrist
+        raw_shape:
+        - 3
+        - 240
+        - 320
+        shape:
+        - 3
+        - 240
+        - 320
+      action:
+      - key: default
+        raw_shape: 14
+        shape: 14
+      state:
+      - key: default
+        raw_shape: 14
+        shape: 14
+    num_frames: 33
+    global_sample_stride: 1
+    action_video_freq_ratio: 4
+    video_size:
+    - 384
+    - 320
+    camera_key: null
+    val_set_proportion: 0.0
+    is_training_set: true
+    pretrained_norm_stats: ${oc.env:E05_DATA_ROOT,./data}/dataset_stats.json
+    skip_padding_as_possible: false
+    concat_multi_camera: robotwin
+    processor:
+      _target_: fastwam.datasets.lerobot.processors.fastwam_processor.FastWAMProcessor
+      shape_meta:
+        images:
+        - key: cam_high
+          raw_shape:
+          - 3
+          - 240
+          - 320
+          shape:
+          - 3
+          - 240
+          - 320
+        - key: cam_left_wrist
+          raw_shape:
+          - 3
+          - 240
+          - 320
+          shape:
+          - 3
+          - 240
+          - 320
+        - key: cam_right_wrist
+          raw_shape:
+          - 3
+          - 240
+          - 320
+          shape:
+          - 3
+          - 240
+          - 320
+        action:
+        - key: default
+          raw_shape: 14
+          shape: 14
+        state:
+        - key: default
+          raw_shape: 14
+          shape: 14
+      num_obs_steps: 33
+      num_output_cameras: 3
+      action_output_dim: 14
+      proprio_output_dim: 14
+      action_state_transforms: null
+      use_stepwise_action_norm: false
+      norm_default_mode: z-score
+      norm_exception_mode: null
+      action_state_merger:
+        _target_: fastwam.datasets.lerobot.transforms.action_state_merger.ConcatLeftAlign
+      train_transforms:
+      - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+      - _target_: torchvision.transforms.Resize
+        size:
+        - 240
+        - 320
+      val_transforms:
+      - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+      - _target_: torchvision.transforms.Resize
+        size:
+        - 240
+        - 320
+      vggt_camera_keys:
+      - cam_high
+      - cam_left_wrist
+      - cam_right_wrist
+      vggt_image_size: 256
+      vggt_augmentation:
+        _target_: fastwam.aug.DomainRandomization
+        enabled: true
+        p: 0.8
+        photometric:
+          brightness: 0.4
+          contrast: 0.4
+          saturation: 0.4
+          hue: 0.1
+          gamma:
+          - 0.7
+          - 1.4
+          exposure:
+          - -0.5
+          - 0.5
+          color_temperature: 0.15
+          gaussian_noise_std: 0.03
+          blur_sigma:
+          - 0.0
+          - 1.5
+          blur_prob: 0.3
+        style:
+          enabled: true
+          p: 0.5
+          target_mean:
+          - 0.2
+          - 0.8
+          target_std:
+          - 0.05
+          - 0.4
+          strength:
+          - 0.4
+          - 1.0
+        fourier:
+          enabled: true
+          p: 0.5
+          amp_jitter:
+          - 0.5
+          - 1.5
+          envelope_strength:
+          - 0.0
+          - 0.6
+          envelope_grid: 8
+    text_embedding_cache_dir: ${oc.env:E05_DATA_ROOT,./data}/text_embeds_cache/robotwin
+    context_len: 128
+    dataset_name: robotwin_clean_xera
+    reconstruction_targets: true
+    reconstruction_cache_root: ${oc.env:E05_DATA_ROOT,./data}/reconstruction_cache
+    reconstruction_allow_missing: false
+    reconstruction_future_frame_index: 32
+    reconstruction_target: ${model.reconstruction_target}
+  val: null
+  dataset_name: robotwin_clean_xera
+model:
+  _target_: e05.create_e05
+  pretrained_checkpoint_path: null
+  reset_action_projections: false
+  reset_proprio_encoder: false
+  train_vggt: true
+  skip_vggt_load_from_pretrain: false
+  aggregator_checkpoint_path: ${oc.env:E05_PRETRAIN_ROOT,./checkpoints/VGGT-Omega}/vggt_omega_1b_256_aggregator.pt
+  vggt_weights_path: ${oc.env:E05_PRETRAIN_ROOT,./checkpoints/VGGT-Omega}/vggt_omega_1b_256_text.pt
+  vggt_head_checkpoint_path: ${model.vggt_weights_path}
+  lambda_vggt_recon: 0.01
+  reconstruction_loss_config:
+    backend: official
+    official: {}
+    lambda_camera: 1.0
+    lambda_depth: 1.0
+    lambda_point: 1.0
+    use_conf_loss: false
+    conf_alpha: 0.2
+    gradient_weight: 0.5
+  layer_pairs:
+  - - 0
+    - 3
+  - - 1
+    - 4
+  - - 2
+    - 5
+  - - 3
+    - 6
+  - - 4
+    - 7
+  - - 5
+    - 8
+  - - 6
+    - 9
+  - - 7
+    - 10
+  - - 8
+    - 11
+  - - 9
+    - 12
+  - - 10
+    - 13
+  - - 11
+    - 14
+  - - 12
+    - 15
+  - - 13
+    - 16
+  - - 14
+    - 17
+  - - 15
+    - 18
+  - - 16
+    - 19
+  - - 17
+    - 20
+  - - 18
+    - 21
+  - - 19
+    - 22
+  - - 20
+    - 23
+  - - 21
+    - 24
+  - - 22
+    - 25
+  - - 23
+    - 26
+  projection_mode: vggt_to_fastwam
+  projection_sharing: independent
+  vggt_width: 1024
+  vggt_num_heads: 16
+  vggt_camera_keys:
+  - cam_high
+  - cam_left_wrist
+  - cam_right_wrist
+  proprio_dim: 14
+  mot_checkpoint_mixed_attn: false
+  action_dit_pretrained_path: null
+  skip_action_dit_load_from_pretrain: true
+  action_dit_config:
+    action_dim: 14
+    hidden_dim: 1024
+    ffn_dim: 4096
+    num_heads: 24
+    attn_head_dim: 128
+    num_layers: 30
+    text_dim: 4096
+    freq_dim: 256
+    eps: 1.0e-06
+    use_gradient_checkpointing: false
+  action_scheduler:
+    train_shift: 5.0
+    infer_shift: 5.0
+    num_train_timesteps: 1000
+  reconstruction_target: future
+  load_text_encoder: true
+  skip_dit_load_from_pretrain: true
+save_state_at_stop: true
+ckpt: ${E05_ROOT}/checkpoints/release/step_109000.pt
+gpu_id: 1
+EVALUATION:
+  robotwin_root: third_party/RoboTwin
+  policy_name: e05_policy
+  task_name: beat_block_hammer
+  task_names: ${oc.select:robotwin_task_names,null}
+  task_config: demo_clean
+  instruction_type: seen
+  phase: both
+  eval_num_episodes: 1
+  output_dir: ${E05_ROOT}/runs/e05_smoke_eval_109000_20261028_173612
+  action_horizon: 32
+  replan_steps: 24
+  num_inference_steps: 10
+  sigma_shift: null
+  text_cfg_scale: 1.0
+  negative_prompt: ''
+  rand_device: cpu
+  tiled: false
+  timing_enabled: false
+  skip_get_obs_within_replan: true
+  reconstruction_visualization:
+    enabled: false
+    output_dir: null
+    max_episodes: 3
+    every_n_replans: 1
+    include_gt_depth: true
+    save_panel: true
+    save_npz: true
+    save_pointcloud: true
+    save_video: true
+    video_fps: 2
+    point_stride: 4
+  training_config_path: ${E05_ROOT}/configs/release.yaml
+  dataset_stats_path: ${E05_ROOT}/checkpoints/release/dataset_stats.json
+  device: cuda
+MULTIRUN:
+  enabled: false
+  num_nodes: 1
+  node_rank: 0
+  run_id: null
+  num_gpus: 8
+  gpu_ids: null
+  max_tasks_per_gpu: 1

@@ -1,0 +1,113 @@
+{
+  "updated_at_utc": "2026-10-28T14:35:46.728399+00:00",
+  "code_url": "https://github.com/X-EraAI/e05",
+  "all_resources_verified": true,
+  "installed_data_stats_match_downloaded_policy_stats": true,
+  "resources": {
+    "robotwin": {
+      "repo_id": "X-EraAI/e05-robotwin",
+      "repo_type": "model",
+      "revision": "886707967d97c0122e31426b6792799da1322fbd",
+      "passed": true,
+      "downloaded_sha256_verified": 1,
+      "verification_directory": ".cache/hf-verify/robotwin",
+      "companion_files_match": [
+        "config.yaml",
+        "dataset_stats.json",
+        "preprocessing.json",
+        "SHA256SUMS"
+      ]
+    },
+    "embodied-vggt": {
+      "repo_id": "X-EraAI/e05-embodied-vggt",
+      "repo_type": "model",
+      "revision": "2fdf396328d0c6808e2d8492fbd80b7f77bbe929",
+      "checkpoint_load": {
+        "format": "e05_embodied_vggt",
+        "tensors": 1415,
+        "finite": true
+      },
+      "passed": true,
+      "downloaded_sha256_verified": 1,
+      "verification_directory": ".cache/hf-verify/embodied-vggt",
+      "factory_load": {
+        "factory": "e05.create_e05",
+        "strict_state_match": true,
+        "tensor_count": 1415,
+        "device": "cpu"
+      },
+      "companion_files_match": [
+        "SHA256SUMS"
+      ]
+    },
+    "robotwin-data": {
+      "repo_id": "X-EraAI/e05-robotwin-data",
+      "repo_type": "dataset",
+      "revision": "8c1b06a69506d2cb76dffb74529dfbc5ab894cd1",
+      "passed": true,
+      "downloaded_sha256_verified": 1666,
+      "verification_directory": ".cache/hf-verify/robotwin-data"
+    }
+  },
+  "data_validation": {
+    "passed": true,
+    "full_archive_hash_check": true,
+    "episodes": 2500,
+    "frames": 549787,
+    "robot_tasks": 50,
+    "language_entries": 158984,
+    "fps": 15,
+    "cache_counts": {
+      "geometry": 549787,
+      "text": 158984
+    },
+    "sample_indices": [
+      0,
+      64,
+      138,
+      274893,
+      549786
+    ]
+  },
+  "inference_validation": {
+    "passed": true,
+    "model_name": "e05",
+    "model_class": "fastwam.models.wan22.e05.E05",
+    "checkpoint": "Hugging Face download: X-EraAI/e05-robotwin/step_109000.pt",
+    "shapes": {
+      "action": [
+        32,
+        14
+      ],
+      "normalized_action": [
+        32,
+        14
+      ],
+      "future_scale_convention": [],
+      "future_depth": [
+        1,
+        3,
+        224,
+        288,
+        1
+      ],
+      "future_confidence": [
+        1,
+        3,
+        224,
+        288
+      ],
+      "future_pose": [
+        1,
+        3,
+        9
+      ]
+    },
+    "elapsed_seconds": 50.78714323043823,
+    "peak_memory_bytes": 16995091456
+  },
+  "local_generated_output_cleanup": {
+    "manifest": "artifacts/cleanup_manifest.json",
+    "note": "Historical validation results are retained; temporary run outputs and local download verification copies were removed after successful verification."
+  }
+}

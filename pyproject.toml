@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "e05"
+version = "0.1.0"
+description = "e05: RoboTwin visuomotor model, 109k release"
+requires-python = ">=3.10"
+dependencies = []  # Install requirements.lock.txt before this package.
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["e05*", "fastwam*"]
+
+[tool.setuptools.package-data]
+"fastwam.aug.vggt_omega_official" = ["LICENSE", "PROVENANCE.json"]
+"fastwam.aug" = ["LICENSE-MIT", "PROVENANCE.json"]
+"fastwam.models.wan22.vggt_omega_loss" = ["defaults.yaml", "LICENSE", "README.md", "upstream_sha256.json"]

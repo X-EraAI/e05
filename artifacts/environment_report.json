@@ -1,0 +1,126 @@
+{
+  "python": "${E05_ROOT}/.envs/e05/bin/python",
+  "prefix": "${E05_ROOT}/.envs/e05",
+  "modules": {
+    "torch": {
+      "path": "${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/torch/__init__.py",
+      "version": "2.10.0+cu128"
+    },
+    "e05": {
+      "path": "${E05_ROOT}/src/e05/__init__.py",
+      "version": "0.1.0"
+    },
+    "fastwam": {
+      "path": "${E05_ROOT}/src/fastwam/__init__.py",
+      "version": null
+    },
+    "vggt_omega": {
+      "path": "${E05_ROOT}/third_party/vggt-omega/vggt_omega/__init__.py",
+      "version": "0.0.1"
+    },
+    "curobo": {
+      "path": "${E05_ROOT}/third_party/curobo/src/curobo/__init__.py",
+      "version": "v0.7.0-no-tag"
+    },
+    "sapien": {
+      "path": "${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/sapien/__init__.py",
+      "version": "3.0.0b1"
+    },
+    "mplib": {
+      "path": "${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/mplib/__init__.py",
+      "version": "0.2.1"
+    },
+    "av": {
+      "path": "${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/av/__init__.py",
+      "version": "16.0.1"
+    },
+    "datasets": {
+      "path": "${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/datasets/__init__.py",
+      "version": "3.6.0"
+    },
+    "deepspeed": {
+      "path": "${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/deepspeed/__init__.py",
+      "version": "0.18.5"
+    },
+    "transformers": {
+      "path": "${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/transformers/__init__.py",
+      "version": "4.57.1"
+    }
+  },
+  "cache_paths": {
+    "HF_HOME": "${E05_ROOT}/.cache/huggingface",
+    "HF_DATASETS_CACHE": "${E05_ROOT}/.cache/datasets",
+    "TORCH_EXTENSIONS_DIR": "${E05_ROOT}/.cache/torch_extensions",
+    "TRITON_CACHE_DIR": "${E05_ROOT}/.cache/triton",
+    "WARP_CACHE_PATH": "${E05_ROOT}/.cache/warp",
+    "TMPDIR": "${E05_ROOT}/.cache/tmp"
+  },
+  "gpu_count": 8,
+  "gpus": [
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    },
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    },
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    },
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    },
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    },
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    },
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    },
+    {
+      "name": "NVIDIA RPBZZZ6",
+      "capability": [
+        12,
+        0
+      ],
+      "free_bytes": 101384454144
+    }
+  ],
+  "passed": true
+}

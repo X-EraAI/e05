@@ -1,0 +1,187 @@
+{
+  "scope": "E05 local generated files only",
+  "deleted": [
+    {
+      "path": "train.log",
+      "files_removed": 1,
+      "logical_bytes_removed": 160368
+    },
+    {
+      "path": "eval_robotwin_single.log",
+      "files_removed": 1,
+      "logical_bytes_removed": 0
+    },
+    {
+      "path": "run_robotwin_manager.log",
+      "files_removed": 1,
+      "logical_bytes_removed": 0
+    },
+    {
+      "path": "runs",
+      "files_removed": 785,
+      "logical_bytes_removed": 27890154430
+    },
+    {
+      "path": "audit",
+      "files_removed": 181,
+      "logical_bytes_removed": 4303964420
+    },
+    {
+      "path": ".pytest_cache",
+      "files_removed": 5,
+      "logical_bytes_removed": 18327
+    },
+    {
+      "path": ".cache/hf-verify",
+      "files_removed": 15004,
+      "logical_bytes_removed": 823289015217
+    },
+    {
+      "path": "dist/E05-code.tar.gz",
+      "files_removed": 1,
+      "logical_bytes_removed": 110617627
+    },
+    {
+      "path": "dist/E05-model-109000.tar",
+      "files_removed": 1,
+      "logical_bytes_removed": 6941245440
+    },
+    {
+      "path": "artifacts/validation_before_e05_rename",
+      "files_removed": 56,
+      "logical_bytes_removed": 401307
+    },
+    {
+      "path": "artifacts/package_validation.json",
+      "files_removed": 1,
+      "logical_bytes_removed": 163
+    },
+    {
+      "path": "artifacts/e05_name_migration/packaging.json",
+      "files_removed": 1,
+      "logical_bytes_removed": 641
+    },
+    {
+      "path": "artifacts/regression.log",
+      "files_removed": 1,
+      "logical_bytes_removed": 645
+    },
+    {
+      "path": "artifacts/train_smoke/train.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 62956
+    },
+    {
+      "path": "artifacts/eval_smoke/manager.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 12682
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_adjust_bottle_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1605
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_adjust_bottle_20261028_174806.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1670
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_beat_block_hammer_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1617
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_beat_block_hammer_20261028_174759.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1682
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_handover_block_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1608
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_handover_block_20261028_174810.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1673
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_open_microwave_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1608
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_open_microwave_20261028_174814.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1678
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_pick_dual_bottles_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1617
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_pick_dual_bottles_20261028_174804.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1687
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_place_bread_basket_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1620
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_place_bread_basket_20261028_174812.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1690
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_stack_blocks_two_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1614
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_stack_blocks_two_20261028_174810.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1684
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_turn_switch_20261028_173629.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1594
+    },
+    {
+      "path": "artifacts/eval_smoke/eval_turn_switch_20261028_174816.txt",
+      "files_removed": 1,
+      "logical_bytes_removed": 1664
+    }
+  ],
+  "files_removed": 16057,
+  "logical_bytes_removed": 862535680534,
+  "protected_files_unchanged": {
+    "checkpoints/release/step_109000.pt": {
+      "size": 6941126119,
+      "mtime_ns": 1793159677970526113
+    },
+    "checkpoints/embodied-vggt/e05_embodied_vggt_step_260000.pt": {
+      "size": 4597332135,
+      "mtime_ns": 1793187833875522476
+    },
+    "dist/data/manifest.json": {
+      "size": 425075,
+      "mtime_ns": 1793162813165658451
+    },
+    ".envs/e05/conda-meta/history": {
+      "size": 9555,
+      "mtime_ns": 1793160353515919402
+    }
+  },
+  "preserved": [
+    "source and smoke entrypoints",
+    "published checkpoints",
+    "training data and dist/data backing files",
+    "Conda environment and authentication cache",
+    "latest validation summaries and historical benchmark results"
+  ]
+}

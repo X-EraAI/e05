@@ -1,0 +1,5 @@
+# @package _global_
+# Compatibility alias for older launch commands; use task=e05.
+defaults:
+  - e05
+  - _self_

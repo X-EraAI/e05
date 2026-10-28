@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "model_name": "e05",
+  "model_factory": "e05.create_e05",
+  "formal_schedule_steps": 300720,
+  "stop_after_steps": 4,
+  "batch_per_gpu": 8,
+  "gradient_accumulation_steps": 2,
+  "effective_batch": 128,
+  "reduced_batch": false,
+  "increased_batch": false,
+  "original_batch8_validated": false,
+  "initialization": "public_vggt_random_actiondit_bridge",
+  "ranks": [
+    {
+      "rank": 0,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63834074112,
+      "final_loss": 1.7148504257202148,
+      "elapsed_seconds": 21.154013264924288,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    },
+    {
+      "rank": 1,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63850165248,
+      "final_loss": 1.48085618019104,
+      "elapsed_seconds": 21.357682352885604,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    },
+    {
+      "rank": 2,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63833562112,
+      "final_loss": 2.193840503692627,
+      "elapsed_seconds": 21.241586159914732,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    },
+    {
+      "rank": 3,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63840891904,
+      "final_loss": 3.0290346145629883,
+      "elapsed_seconds": 21.37735485099256,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    },
+    {
+      "rank": 4,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63852770304,
+      "final_loss": 1.7403619289398193,
+      "elapsed_seconds": 21.65453794039786,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    },
+    {
+      "rank": 5,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63716772864,
+      "final_loss": 1.4413295984268188,
+      "elapsed_seconds": 21.385444147512317,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    },
+    {
+      "rank": 6,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63719863296,
+      "final_loss": 2.3726699352264404,
+      "elapsed_seconds": 21.017048832029104,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    },
+    {
+      "rank": 7,
+      "steps": 4,
+      "microbatches_completed": 8,
+      "peak_memory_bytes": 63835540992,
+      "final_loss": 2.6802470684051514,
+      "elapsed_seconds": 21.670850049704313,
+      "gradient_elements": {
+        "aggregator": 1815836672,
+        "camera_head": 407130130,
+        "dense_head": 64661568,
+        "language_projector": 10489856,
+        "bridge": 301989888,
+        "action_expert": 2041800732
+      }
+    }
+  ],
+  "checkpoint": "${E05_ROOT}/runs/e05_smoke_train_8gpu_bs8_acc2_20261028_173021/checkpoints/weights/step_000004.pt"
+}

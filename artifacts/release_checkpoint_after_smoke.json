@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "sha256": "2c6edfb1ffc2ada95c909ff69e355cdbf3a6b1abc702f77d97293f96e1d21175",
+  "size_bytes": 6941126119,
+  "model_name": "e05",
+  "checked_after": "e05 name migration and bs8 accum2 training",
+  "checkpoint_unchanged": true
+}

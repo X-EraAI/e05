@@ -1,0 +1,68 @@
+{
+  "files": [
+    {
+      "path": "VGGT-Omega/vggt_omega_1b_256_text.pt",
+      "size": 5399490950,
+      "sha256": "2c59393e2d15569498d42191e03c29aabc72bdb243a20870b22a0b24a8f8095c",
+      "modelscope_repo": "sanqilu376/VGGT-Omega",
+      "file": "vggt_omega_1b_256_text.pt",
+      "revision": "master",
+      "version_binding": "sha256"
+    },
+    {
+      "path": "VGGT-Omega/vggt_omega_1b_256_aggregator.pt",
+      "size": 3632998534,
+      "sha256": "ddcb1d18b3247408b7014cac051ee0ea054b168a69c6a104e9672fd5e366ec89",
+      "modelscope_repo": null,
+      "file": null,
+      "revision": null,
+      "version_binding": "sha256"
+    },
+    {
+      "path": "DiffSynth-Studio/Wan-Series-Converted-Safetensors/models_t5_umt5-xxl-enc-bf16.safetensors",
+      "size": 11361845432,
+      "sha256": "d92de679881d38af9c89eff7bb1b6d6c9d96cb2b69831e4027e9ecabdd38eb23",
+      "modelscope_repo": "DiffSynth-Studio/Wan-Series-Converted-Safetensors",
+      "file": "models_t5_umt5-xxl-enc-bf16.safetensors",
+      "revision": "master",
+      "version_binding": "sha256"
+    },
+    {
+      "path": "Wan-AI/Wan2.1-T2V-1.3B/google/umt5-xxl/special_tokens_map.json",
+      "size": 6623,
+      "sha256": "7b8a9f5040adb67b5805abdfd42c1f8d0f3d0e711f10726580eb3789cd0ad61d",
+      "modelscope_repo": "Wan-AI/Wan2.1-T2V-1.3B",
+      "file": "google/umt5-xxl/special_tokens_map.json",
+      "revision": "master",
+      "version_binding": "sha256"
+    },
+    {
+      "path": "Wan-AI/Wan2.1-T2V-1.3B/google/umt5-xxl/spiece.model",
+      "size": 4548313,
+      "sha256": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+      "modelscope_repo": "Wan-AI/Wan2.1-T2V-1.3B",
+      "file": "google/umt5-xxl/spiece.model",
+      "revision": "master",
+      "version_binding": "sha256"
+    },
+    {
+      "path": "Wan-AI/Wan2.1-T2V-1.3B/google/umt5-xxl/tokenizer.json",
+      "size": 16837417,
+      "sha256": "6e197b4d3dbd71da14b4eb255f4fa91c9c1f2068b20a2de2472967ca3d22602b",
+      "modelscope_repo": "Wan-AI/Wan2.1-T2V-1.3B",
+      "file": "google/umt5-xxl/tokenizer.json",
+      "revision": "master",
+      "version_binding": "sha256"
+    },
+    {
+      "path": "Wan-AI/Wan2.1-T2V-1.3B/google/umt5-xxl/tokenizer_config.json",
+      "size": 61728,
+      "sha256": "ed9a3a8b0faa71a70a32847e0435fe036e6e112d4df4edb7bb48a921e344dc05",
+      "modelscope_repo": "Wan-AI/Wan2.1-T2V-1.3B",
+      "file": "google/umt5-xxl/tokenizer_config.json",
+      "revision": "master",
+      "version_binding": "sha256"
+    }
+  ],
+  "aggregator_derivation": "strip aggregator. prefix from the original public checkpoint; tensor contents must match"
+}

@@ -1,0 +1,67 @@
+--- legacy_source/action_vggt_lang_recon_fastwam.py
++++ src/fastwam/models/wan22/e05.py
+@@ -16,7 +16,7 @@
+ logger = logging.getLogger(__name__)
+ 
+ 
+-class ActionVGGTLangReconFastWAM(ActionVGGTFastWAM):
++class E05(ActionVGGTFastWAM):
+     """Single-stream ActionVGGT model for language-conditioned geometry.
+ 
+     The action branch still receives the normal ActionDiT context (including
+@@ -25,6 +25,8 @@
+     treated as a language token.
+     """
+ 
++    MODEL_NAME = "e05"
++    # Serialized identity is retained so the published 109k bytes stay intact.
+     CHECKPOINT_FORMAT = "action_vggt_lang_recon_fastwam"
+     CHECKPOINT_VERSION = 1
+     evaluation_mode = "action_only"
+@@ -46,11 +48,11 @@
+         self.vggt_camera_keys = tuple(vggt_camera_keys)
+         if self.reconstruction_loss_config is None:
+             raise ValueError(
+-                "ActionVGGTLangReconFastWAM requires reconstruction_loss_config."
++                "E05 requires reconstruction_loss_config."
+             )
+         if not hasattr(self.vggt_backbone, "language_projector"):
+             raise TypeError(
+-                "ActionVGGTLangReconFastWAM requires a language-conditioned VGGT backbone."
++                "E05 requires a language-conditioned VGGT backbone."
+             )
+ 
+     def _future_recon_loss(self, prediction, sample, valid_mask=None):
+@@ -139,7 +141,7 @@
+         missing = sorted(required - set(sample))
+         if missing:
+             raise ValueError(
+-                f"ActionVGGTLangReconFastWAM sample is missing {missing}."
++                f"E05 sample is missing {missing}."
+             )
+ 
+         action = sample["action"].to(
+@@ -436,7 +438,7 @@
+         unexpected = sorted(set(payload) - expected)
+         if missing or unexpected:
+             raise ValueError(
+-                "ActionVGGTLangReconFastWAM checkpoint key mismatch: "
++                "E05 checkpoint key mismatch: "
+                 f"missing={missing}, unexpected={unexpected}."
+             )
+         if (
+@@ -617,7 +619,7 @@
+             )
+         if payload["metadata"] != expected_metadata:
+             raise ValueError(
+-                "ActionVGGTLangReconFastWAM checkpoint metadata mismatch."
++                "E05 checkpoint metadata mismatch."
+             )
+         self.action_expert.load_state_dict(payload["action_expert"], strict=True)
+         self.mot.vggt_bridge.load_state_dict(payload["vggt_bridge"], strict=True)
+@@ -634,4 +636,4 @@
+         return payload
+ 
+ 
+-__all__ = ["ActionVGGTLangReconFastWAM"]
++__all__ = ["E05"]

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "model": "e05",
+  "path_base": "checkpoints/",
+  "public_component_manifest": "artifacts/component_manifest.json",
+  "resources": [
+    {
+      "id": "e05-robotwin-109k",
+      "path": "release/step_109000.pt",
+      "kind": "complete_policy",
+      "use": "RoboTwin inference and evaluation",
+      "step": 109000,
+      "size_bytes": 6941126119,
+      "sha256": "2c6edfb1ffc2ada95c909ff69e355cdbf3a6b1abc702f77d97293f96e1d21175",
+      "required_companion": "release/dataset_stats.json",
+      "download_url": "https://huggingface.co/X-EraAI/e05-robotwin/resolve/886707967d97c0122e31426b6792799da1322fbd/step_109000.pt",
+      "availability": "public; downloaded and SHA256 verified",
+      "repo_id": "X-EraAI/e05-robotwin",
+      "revision": "886707967d97c0122e31426b6792799da1322fbd"
+    },
+    {
+      "id": "e05-embodied-vggt-260k",
+      "path": "embodied-vggt/e05_embodied_vggt_step_260000.pt",
+      "kind": "language_conditioned_vggt_backbone",
+      "use": "VGGT initialization for real-robot training",
+      "step": 260000,
+      "size_bytes": 4597332135,
+      "sha256": "ce5698a438b3f246d1d1fe0bcc4d1b205876c0523066cf11f08f8434d98770c5",
+      "format": "e05_embodied_vggt",
+      "version": 1,
+      "source": {
+        "checkpoint": "step_260000.pt",
+        "run": "beta_joint_7n_2ep_cosine_reader_w12_v1",
+        "sha256": "e35afc81970c8b8938695b866b9911c503520d5ccb0a2f2ed37a3efcfc69cf0f",
+        "format": "action_vggt_lang_recon_fastwam",
+        "step": 260000
+      },
+      "included_components": [
+        "aggregator",
+        "camera_head",
+        "dense_head",
+        "language_projector"
+      ],
+      "excluded_components": [
+        "action_expert",
+        "vggt_bridge",
+        "proprio_encoder",
+        "optimizer"
+      ],
+      "tensor_count": 1415,
+      "dtypes": {
+        "torch.float32": 1341,
+        "torch.bfloat16": 74
+      },
+      "load_config": "model.vggt_backbone_pretrained_checkpoint_path",
+      "config_overlay": "+model_init=embodied_vggt",
+      "download_url": "https://huggingface.co/X-EraAI/e05-embodied-vggt/resolve/2fdf396328d0c6808e2d8492fbd80b7f77bbe929/e05_embodied_vggt_step_260000.pt",
+      "availability": "public; downloaded and SHA256 verified",
+      "repo_id": "X-EraAI/e05-embodied-vggt",
+      "revision": "2fdf396328d0c6808e2d8492fbd80b7f77bbe929"
+    }
+  ],
+  "terms": "See THIRD_PARTY_NOTICES.md and upstream VGGT-Omega model/code terms; the repository code license does not relicense model weights."
+}

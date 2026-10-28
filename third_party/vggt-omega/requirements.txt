@@ -1,0 +1,7 @@
+torch
+torchvision
+numpy
+Pillow
+einops
+safetensors
+opencv-python

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "factory": "e05.create_e05",
+  "config_overlay": "model_init=embodied_vggt",
+  "checkpoint": "checkpoints/embodied-vggt/e05_embodied_vggt_step_260000.pt",
+  "strict_complete_backbone_load": true,
+  "tensor_values_verified": 1415,
+  "construction_dtype": "torch.float32",
+  "export_preserves_original_mixed_dtypes": true,
+  "public_vggt_paths_disabled": true,
+  "full_model_initialization_disabled": true,
+  "action_and_bridge_differ_from_source_probes": {
+    "action_expert": "text_embedding.0.weight",
+    "vggt_bridge": "layer_projections.3.vggt_k_proj.weight"
+  },
+  "training_or_robot_rollout_executed": false,
+  "related_regression_tests_passed": 2
+}

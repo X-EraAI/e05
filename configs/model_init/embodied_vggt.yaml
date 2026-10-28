@@ -1,0 +1,11 @@
+# @package model
+# Initialization overlay only; real-robot data, cameras and action/state dimensions
+# must be supplied by the task configuration.
+vggt_backbone_pretrained_checkpoint_path: ${oc.env:E05_EMBODIED_VGGT_CHECKPOINT,./checkpoints/embodied-vggt/e05_embodied_vggt_step_260000.pt}
+pretrained_checkpoint_path: null
+skip_vggt_load_from_pretrain: true
+vggt_weights_path: null
+aggregator_checkpoint_path: null
+vggt_head_checkpoint_path: null
+action_dit_pretrained_path: null
+skip_action_dit_load_from_pretrain: true

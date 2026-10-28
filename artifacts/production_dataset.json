@@ -1,0 +1,719 @@
+{
+  "passed": true,
+  "length": 549787,
+  "augmentation_enabled": true,
+  "samples": [
+    {
+      "index": 0,
+      "fields": {
+        "video": {
+          "shape": [
+            3,
+            9,
+            384,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_images": {
+          "shape": [
+            3,
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_current_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_future_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_is_pad": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_is_synthetic": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "action": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "proprio": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "context": {
+          "shape": [
+            128,
+            4096
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "language_context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "image_is_pad": {
+          "shape": [
+            9
+          ],
+          "dtype": "torch.bool"
+        },
+        "action_is_pad": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.bool"
+        },
+        "proprio_is_pad": {
+          "shape": [
+            33
+          ],
+          "dtype": "torch.bool"
+        }
+      }
+    },
+    {
+      "index": 64,
+      "fields": {
+        "video": {
+          "shape": [
+            3,
+            9,
+            384,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_images": {
+          "shape": [
+            3,
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_current_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_future_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_is_pad": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_is_synthetic": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "action": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "proprio": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "context": {
+          "shape": [
+            128,
+            4096
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "language_context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "image_is_pad": {
+          "shape": [
+            9
+          ],
+          "dtype": "torch.bool"
+        },
+        "action_is_pad": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.bool"
+        },
+        "proprio_is_pad": {
+          "shape": [
+            33
+          ],
+          "dtype": "torch.bool"
+        }
+      }
+    },
+    {
+      "index": 138,
+      "fields": {
+        "video": {
+          "shape": [
+            3,
+            9,
+            384,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_images": {
+          "shape": [
+            3,
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_current_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_future_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_is_pad": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_is_synthetic": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "action": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "proprio": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "context": {
+          "shape": [
+            128,
+            4096
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "language_context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "image_is_pad": {
+          "shape": [
+            9
+          ],
+          "dtype": "torch.bool"
+        },
+        "action_is_pad": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.bool"
+        },
+        "proprio_is_pad": {
+          "shape": [
+            33
+          ],
+          "dtype": "torch.bool"
+        }
+      }
+    },
+    {
+      "index": 549786,
+      "fields": {
+        "video": {
+          "shape": [
+            3,
+            9,
+            384,
+            320
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_images": {
+          "shape": [
+            3,
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_current_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_current_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_future_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_future_is_pad": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_is_synthetic": {
+          "shape": [],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_depth": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_depth_valid": {
+          "shape": [
+            3,
+            224,
+            288
+          ],
+          "dtype": "torch.bool"
+        },
+        "vggt_recon_intrinsics": {
+          "shape": [
+            3,
+            3,
+            3
+          ],
+          "dtype": "torch.float32"
+        },
+        "vggt_recon_extrinsics": {
+          "shape": [
+            3,
+            3,
+            4
+          ],
+          "dtype": "torch.float32"
+        },
+        "action": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "proprio": {
+          "shape": [
+            32,
+            14
+          ],
+          "dtype": "torch.float32"
+        },
+        "context": {
+          "shape": [
+            128,
+            4096
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "language_context_mask": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.bool"
+        },
+        "image_is_pad": {
+          "shape": [
+            9
+          ],
+          "dtype": "torch.bool"
+        },
+        "action_is_pad": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.bool"
+        },
+        "proprio_is_pad": {
+          "shape": [
+            33
+          ],
+          "dtype": "torch.bool"
+        }
+      }
+    }
+  ]
+}

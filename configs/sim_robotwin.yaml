@@ -1,0 +1,60 @@
+# @package _global_
+defaults:
+- train
+- override /task: e05
+- _self_
+ckpt: ${oc.env:E05_CHECKPOINT,./checkpoints/release/step_109000.pt}
+gpu_id: 0
+model:
+  load_text_encoder: true
+  skip_dit_load_from_pretrain: true
+  action_dit_pretrained_path: null
+EVALUATION:
+  robotwin_root: third_party/RoboTwin
+  policy_name: e05_policy
+  task_name: null
+  task_names: ${oc.select:robotwin_task_names,null}
+  task_config: demo_randomized
+  instruction_type: seen
+  phase: both
+  eval_num_episodes: 100
+  output_dir: ${oc.env:E05_EVAL_OUTPUT_DIR,./runs/eval}
+  action_horizon: 32
+  replan_steps: 24
+  num_inference_steps: 10
+  sigma_shift: null
+  text_cfg_scale: 1.0
+  negative_prompt: ''
+  rand_device: cpu
+  tiled: false
+  timing_enabled: false
+  skip_get_obs_within_replan: true
+  reconstruction_visualization:
+    enabled: false
+    output_dir: null
+    max_episodes: 3
+    every_n_replans: 1
+    include_gt_depth: true
+    save_panel: true
+    save_npz: true
+    save_pointcloud: true
+    save_video: true
+    video_fps: 2
+    point_stride: 4
+  training_config_path: ./configs/release.yaml
+  dataset_stats_path: ${oc.env:E05_STATS_PATH,./checkpoints/release/dataset_stats.json}
+  device: cuda
+MULTIRUN:
+  enabled: false
+  num_nodes: 1
+  node_rank: 0
+  run_id: null
+  num_gpus: 8
+  gpu_ids: null
+  max_tasks_per_gpu: 1
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: .
+  output_subdir: null

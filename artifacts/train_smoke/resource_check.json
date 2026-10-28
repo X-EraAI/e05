@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "status": "ready",
+  "required_gpus": 8,
+  "batch_per_gpu": 8,
+  "gradient_accumulation_steps": 2,
+  "effective_batch": 128,
+  "reduced_batch": false,
+  "increased_batch": false,
+  "visible_gpus": 8,
+  "minimum_free_gib_per_gpu": 72.0,
+  "free_gib": [
+    94.421630859375,
+    94.421630859375,
+    94.421630859375,
+    94.421630859375,
+    94.421630859375,
+    94.421630859375,
+    94.421630859375,
+    94.421630859375
+  ],
+  "basis": "Historical batch-8/no-checkpointing run observed approximately 67.2 GiB; 72 GiB is an operational admission threshold, not a measured E05 peak.",
+  "training_started": false
+}

@@ -1,0 +1,15 @@
+{
+  "source_run": "langrecon_aug_4n_bs8_acc1_ep70_rdma_v1",
+  "source_task": "robotwin_clean_xera_action_vggt_lang_recon_fastwam_3cam256_1e-4",
+  "step": 109000,
+  "epoch_in_state": 50,
+  "original_world_size": 32,
+  "original_batch_per_gpu": 8,
+  "original_accumulation": 1,
+  "original_epoch_budget": 70,
+  "historical_result": "109000_fix_lang_mask",
+  "model_name": "e05",
+  "public_python_class": "e05.E05",
+  "public_factory": "e05.create_e05",
+  "checkpoint_format": "action_vggt_lang_recon_fastwam"
+}

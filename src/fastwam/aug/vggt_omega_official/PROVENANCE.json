@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/facebookresearch/vggt-omega",
+  "commit": "48b23c8ce72c9a8fcf987f0d7f43d8e4870759f6",
+  "modifications": [],
+  "files": {
+    "augmentation.py": "911e8f9b2c050f6280d5f762e40f1f800335c8605499a8e69709010492506921",
+    "base_dataset.py": "297a56004c4bf953876b2dbd57eadb751e20eb1e83db410d137d692c4d7ba633",
+    "dataset_util.py": "fba90586f7604f50c5876d59bd110812ff7d007ede873b403bc1e619a69d1189",
+    "rotation_util.py": "7e1c2d22e5d0dad70213dd7b93128581e8c086d7d79ef1a069d682fa20dd72f4",
+    "LICENSE": "27696e51930daf5d24222e2d9d65339f529153e853de0e2eb457133a1a6f5239"
+  }
+}
