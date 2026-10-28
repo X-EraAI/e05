@@ -23,6 +23,7 @@ for task in sorted(expected):
   for log in p.glob(f'eval_{task}_*.log'):
    text=re.sub(r'\x1b\[[0-9;]*m','',log.read_text())
    assert 'Traceback (most recent call last)' not in text,log
+   assert 'OIDN Error:' not in text, f'Rendering denoiser error: {log}'
    if f'_result_{phase}.txt' not in text:continue
    counts=re.findall(r'Success rate: (\d+)/(\d+)',text)
    if counts:matches.append((log,counts[-1]))

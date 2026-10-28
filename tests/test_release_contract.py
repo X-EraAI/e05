@@ -43,3 +43,16 @@ def test_inference_passes_language_mask_and_current_state_without_gt(geometry):
  assert observed['language_context_mask'].sum()==5 and observed['context_mask'].all()
  assert observed['proprio'].shape==(1,14)
  assert observed['action_horizon']==32 and observed['num_inference_steps']==10
+
+
+def test_robotwin_runtime_task_configs_are_included():
+ import subprocess
+ import yaml
+ root=Path('third_party/RoboTwin/task_config')
+ for name in ('_camera_config.yml','_embodiment_config.yml','_eval_step_limit.yml','demo_clean.yml','demo_randomized.yml'):
+  path=root/name
+  assert isinstance(yaml.safe_load(path.read_text()),dict),path
+  result=subprocess.run(['git','check-ignore',str(path)],capture_output=True)
+  assert result.returncode==1,(path,result.stdout,result.stderr)
+ for name in ('demo_clean.yml','demo_randomized.yml'):
+  assert yaml.safe_load((root/name).read_text())['embodiment']==['aloha-agilex']

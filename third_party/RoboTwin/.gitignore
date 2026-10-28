@@ -8,7 +8,12 @@ envs/curobo
 *.zip
 viewer_show.*
 eval_video/
-task_config/
+/task_config/*
+!/task_config/_camera_config.yml
+!/task_config/_embodiment_config.yml
+!/task_config/_eval_step_limit.yml
+!/task_config/demo_clean.yml
+!/task_config/demo_randomized.yml
 **/.DS_Store
 
 # eval result
