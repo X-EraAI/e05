@@ -42,7 +42,7 @@ python scripts/download_components.py
 
 依赖版本记录在 `requirements.lock.txt` 和 `environment.conda.lock.txt`。每次打开新的 shell 后，请先执行 `source scripts/env.sh`，以配置模块导入路径和项目内缓存。组件下载脚本根据[记录的摘要](artifacts/component_manifest.json)校验公开 VGGT 初始化权重、文本编码器及 tokenizer；该脚本**不会**下载训练完成的 e05 109k checkpoint、具身预训练 VGGT checkpoint 或处理好的训练数据。
 
-环境检查和仿真配置详见[安装说明](docs/INSTALL.md)。
+环境检查和仿真配置详见[安装说明](docs/INSTALL.md)。独立 checkout 中发现的安装问题、修复和验证范围记录在[独立复现说明](docs/INDEPENDENT_REPRODUCTION.md)。
 
 ## 数据与权重
 

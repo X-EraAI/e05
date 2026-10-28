@@ -43,6 +43,7 @@ The installer creates an isolated Conda environment at `.envs/e05`. The provided
 Dependencies are recorded in `requirements.lock.txt` and `environment.conda.lock.txt`. Source `scripts/env.sh` in each new shell to configure imports and project-local caches. The component downloader verifies public VGGT initialization weights, the text encoder, and tokenizer against [recorded checksums](artifacts/component_manifest.json). It does **not** download the trained e05 109k checkpoint, the embodied-pretrained VGGT checkpoint, or processed training data.
 
 See [installation details](docs/INSTALL.md) for environment validation and simulator setup.
+Fresh-checkout findings and their scope are recorded in the [independent reproduction notes](docs/INDEPENDENT_REPRODUCTION.md).
 
 ## Data and checkpoints
 
