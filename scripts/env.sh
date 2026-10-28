@@ -32,8 +32,16 @@ export CUDA_HOME="${CUDA_HOME:-/usr/local/cuda}"
 export LD_LIBRARY_PATH="$E05_ENV/lib:${LD_LIBRARY_PATH:-}"
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 MAX_JOBS=4
 export HYDRA_FULL_ERROR=1
-mkdir -p "$TMPDIR" "$TORCH_EXTENSIONS_DIR" "$MPLCONFIGDIR" "$CUDA_CACHE_PATH" "$HF_DATASETS_CACHE"
+mkdir -p "$TMPDIR" "$TORCH_EXTENSIONS_DIR" "$TRITON_CACHE_DIR" "$MPLCONFIGDIR" "$CUDA_CACHE_PATH" "$HF_DATASETS_CACHE"
 cd "$E05_ROOT"
 export PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 export TOKENIZERS_PARALLELISM=false
 export OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+
+# SAPIEN's bundled discovery only checks /usr/share; honor system ICDs in /etc too.
+if [[ -z "${VK_ICD_FILENAMES:-}" ]]; then
+ for e05_icd in /usr/share/vulkan/icd.d/nvidia_icd.json /etc/vulkan/icd.d/nvidia_icd.json; do
+  if [[ -f "$e05_icd" ]]; then export VK_ICD_FILENAMES="$e05_icd"; break; fi
+ done
+ unset e05_icd
+fi

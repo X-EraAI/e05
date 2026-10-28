@@ -30,3 +30,9 @@ step-260000 checkpoint. The aggregator, language projector and geometry heads
 retain applicable VGGT-Omega upstream model/code terms. This extraction does
 not change those terms or apply the repository MIT code license to the weights.
 Resource identity is recorded in `artifacts/checkpoint_manifest.json`.
+
+Open Image Denoise 2.3.3 is downloaded separately from the official RenderKit/oidn
+release by scripts/setup_oidn.py to support Blackwell rendering. Its upstream
+LICENSE.txt and third-party-programs notices are retained alongside the installed
+libraries under the isolated SAPIEN package's oidn_library/licenses-2.3.3 directory.
+The repository does not redistribute these binaries in Git.
