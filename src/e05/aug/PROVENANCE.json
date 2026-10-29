@@ -1,0 +1,8 @@
+{
+  "source_repository": "https://github.com/TianhengW/PatchWAM",
+  "source_commit": "dea19d21182a26a8ee16efc2c4125ee7aecf44fb",
+  "source_file": "src/patchwam/data/appearance.py",
+  "source_sha256": "1d9719cd379bca55085938183f4d6dbb068b07f1015225ad38cb5d1f653acf27",
+  "license": "MIT; see LICENSE-MIT and retained source copyright header",
+  "modifications": "Renamed AppearanceRandomizer to DomainRandomization; added default-off enabled switch and RNG-free disabled/p=0 bypass; removed unsupported background argument. Photometric, AdaIN and Fourier math/order retained. E05 applies it to current per-camera RGB after balanced preprocessing, before backbone normalization."
+}

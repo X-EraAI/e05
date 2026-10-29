@@ -3,7 +3,7 @@ import argparse,json,hashlib,zipfile,math
 from pathlib import Path
 import torch
 from concurrent.futures import ThreadPoolExecutor
-from fastwam.datasets.cache_io import load_cache
+from e05.datasets.cache_io import load_cache
 
 def digest(path):
  h=hashlib.sha256()

@@ -24,7 +24,7 @@ def main():
  import torch
  full=a.root/'VGGT-Omega/vggt_omega_1b_256_text.pt';dest=a.root/'VGGT-Omega/vggt_omega_1b_256_aggregator.pt'
  if not dest.exists():
-  from fastwam.models.wan22.vggt_mot import export_aggregator_checkpoint
+  from e05.models.wan22.vggt_mot import export_aggregator_checkpoint
   export_aggregator_checkpoint(full,dest)
  source=torch.load(full,map_location='cpu',mmap=True,weights_only=True)
  for key in ('state_dict','model'):

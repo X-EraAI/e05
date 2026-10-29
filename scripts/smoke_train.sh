@@ -10,7 +10,7 @@ for override in "$@"; do
 done
 case "$E05_SMOKE_BATCH_SIZE" in 16|8|4|2) ;; *) echo "Smoke batch must be 16, 8, 4, or 2" >&2; exit 2;; esac
 export E05_OUTPUT_DIR="${E05_OUTPUT_DIR:-$E05_ROOT/runs/smoke_train_$(date +%Y%m%d_%H%M%S)}"
-export FASTWAM_SMOKE_AUDIT_DIR="$E05_OUTPUT_DIR/audit"
+export E05_SMOKE_AUDIT_DIR="$E05_OUTPUT_DIR/audit"
 mkdir -p "$E05_OUTPUT_DIR"
 "$E05_ENV/bin/python" scripts/check_training_resources.py
 bash scripts/train.sh batch_size="$E05_SMOKE_BATCH_SIZE" gradient_accumulation_steps="$E05_SMOKE_ACCUM" stop_after_steps=4 save_weights_every=4 save_state_every=0 \

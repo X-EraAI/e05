@@ -12,8 +12,8 @@ os.environ["TRITON_CACHE_DIR"] = str(_cache)
 import hydra
 from omegaconf import DictConfig
 
-from fastwam.runtime import run_training
-from fastwam.utils.config_resolvers import register_default_resolvers
+from e05.runtime import run_training
+from e05.utils.config_resolvers import register_default_resolvers
 
 register_default_resolvers()
 

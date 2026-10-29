@@ -5,7 +5,7 @@ root=Path(__file__).resolve().parents[1]
 (root/"outputs/validation").mkdir(parents=True,exist_ok=True)
 report={'python':sys.executable,'prefix':sys.prefix,'modules':{},'cache_paths':{}}
 assert Path(sys.prefix).resolve().is_relative_to(root),sys.prefix
-for name in ['torch','e05','fastwam','vggt_omega','curobo','sapien','mplib','av','datasets','deepspeed','transformers']:
+for name in ['torch','e05','vggt_omega','curobo','sapien','mplib','av','datasets','deepspeed','transformers']:
  m=importlib.import_module(name);p=Path(m.__file__).resolve();report['modules'][name]={'path':str(p),'version':getattr(m,'__version__',None)}
  assert p.is_relative_to(root),(name,p)
 for key in ['HF_HOME','HF_DATASETS_CACHE','TORCH_EXTENSIONS_DIR','TRITON_CACHE_DIR','WARP_CACHE_PATH','TMPDIR']:

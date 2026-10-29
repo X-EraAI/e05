@@ -40,7 +40,7 @@ wandb:
 data:
   train:
     reconstruction_is_synthetic: true
-    _target_: fastwam.datasets.lerobot.robot_video_dataset.RobotVideoDataset
+    _target_: e05.datasets.lerobot.robot_video_dataset.RobotVideoDataset
     dataset_dirs:
     - ${oc.env:E05_DATA_ROOT,./data}/robotwin_clean_xera_v21
     shape_meta:
@@ -93,7 +93,7 @@ data:
     skip_padding_as_possible: false
     concat_multi_camera: robotwin
     processor:
-      _target_: fastwam.datasets.lerobot.processors.fastwam_processor.FastWAMProcessor
+      _target_: e05.datasets.lerobot.processors.e05_processor.E05Processor
       shape_meta:
         images:
         - key: cam_high
@@ -140,15 +140,15 @@ data:
       norm_default_mode: z-score
       norm_exception_mode: null
       action_state_merger:
-        _target_: fastwam.datasets.lerobot.transforms.action_state_merger.ConcatLeftAlign
+        _target_: e05.datasets.lerobot.transforms.action_state_merger.ConcatLeftAlign
       train_transforms:
-      - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+      - _target_: e05.datasets.lerobot.transforms.image.ToTensor
       - _target_: torchvision.transforms.Resize
         size:
         - 240
         - 320
       val_transforms:
-      - _target_: fastwam.datasets.lerobot.transforms.image.ToTensor
+      - _target_: e05.datasets.lerobot.transforms.image.ToTensor
       - _target_: torchvision.transforms.Resize
         size:
         - 240
@@ -159,7 +159,7 @@ data:
       - cam_right_wrist
       vggt_image_size: 256
       vggt_augmentation:
-        _target_: fastwam.aug.DomainRandomization
+        _target_: e05.aug.DomainRandomization
         enabled: true
         p: 0.8
         photometric:
@@ -280,7 +280,7 @@ model:
     - 25
   - - 23
     - 26
-  projection_mode: vggt_to_fastwam
+  projection_mode: vggt_to_e05
   projection_sharing: independent
   vggt_width: 1024
   vggt_num_heads: 16

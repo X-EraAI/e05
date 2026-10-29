@@ -4,11 +4,13 @@ from pathlib import Path
 import numpy as np
 import torch
 from omegaconf import OmegaConf
-from experiments.robotwin.fastwam_policy.deploy_policy import WorldActionRobotWinPolicy
-from fastwam.datasets.lerobot.robot_video_dataset import DEFAULT_PROMPT
+from e05.checkpoint_compat import normalize_config
+from experiments.robotwin.e05_policy.deploy_policy import WorldActionRobotWinPolicy
+from e05.datasets.lerobot.robot_video_dataset import DEFAULT_PROMPT
 
 def load_policy(config,checkpoint,device='cuda',online=True):
- cfg=OmegaConf.load(config)
+ if not Path(checkpoint).is_file():raise FileNotFoundError(f'Inference checkpoint not found: {checkpoint}')
+ cfg=normalize_config(OmegaConf.load(config))
  stats=Path(checkpoint).parent/'dataset_stats.json'
  if not stats.is_file():stats=Path(cfg.data.train.pretrained_norm_stats)
  return WorldActionRobotWinPolicy(

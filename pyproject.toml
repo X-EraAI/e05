@@ -14,9 +14,9 @@ dependencies = []  # Install requirements.lock.txt before this package.
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["e05*", "fastwam*"]
+include = ["e05*"]
 
 [tool.setuptools.package-data]
-"fastwam.aug.vggt_omega_official" = ["LICENSE", "PROVENANCE.json"]
-"fastwam.aug" = ["LICENSE-MIT", "PROVENANCE.json"]
-"fastwam.models.wan22.vggt_omega_loss" = ["defaults.yaml", "LICENSE", "README.md", "upstream_sha256.json"]
+"e05.aug.vggt_omega_official" = ["LICENSE", "PROVENANCE.json"]
+"e05.aug" = ["LICENSE-MIT", "PROVENANCE.json"]
+"e05.models.wan22.vggt_omega_loss" = ["defaults.yaml", "LICENSE", "README.md", "upstream_sha256.json"]
