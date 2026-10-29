@@ -9,13 +9,13 @@ the commit below is the base version for the vendored code.
 - Upstream commit: `39a0cb8af88554f15ddcb5354cd52bde588fa014`
 - Upstream license: see [`LICENSE`](./LICENSE)
 
-## FastWAM local modifications
+## E05 local modifications
 
 The vendored source contains these changes relative to the pinned commit:
 
 - `vggt_omega/models/aggregator.py`: adds selectable attention K/V callbacks,
   callback-layer validation, optional patch embedding injection, and a
-  `capture_only` execution mode used by FastWAM.
+  `capture_only` execution mode used by E05.
 - `vggt_omega/models/layers/attention.py`: exposes attention K/V tensors to a
   callback, with configurable autograd detachment.
 - `vggt_omega/models/layers/block.py`: propagates K/V callbacks through the
@@ -23,9 +23,9 @@ The vendored source contains these changes relative to the pinned commit:
 - `vggt_omega/utils/load_fn.py`: accepts channel-first PyTorch tensors in
   addition to file paths.
 - `requirements.txt`: removes restrictive Torch, TorchVision, and NumPy version
-  constraints so the parent FastWAM environment owns dependency resolution.
-- `README.md`: documents FastWAM's distributed checkpoint and capture workflow.
-- `tests/vggt_fastwam/`: adds regression coverage for tensor image loading and
+  constraints so the parent E05 environment owns dependency resolution.
+- `README.md`: documents E05's distributed checkpoint and capture workflow.
+- Internal tests (not distributed): add regression coverage for tensor image loading and
   the K/V callback integration.
 
 These adaptations are applied directly to the vendored files. To reconstruct

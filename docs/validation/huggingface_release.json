@@ -72,7 +72,6 @@
   "inference_validation": {
     "passed": true,
     "model_name": "e05",
-    "model_class": "fastwam.models.wan22.e05.E05",
     "checkpoint": "Hugging Face download: X-EraAI/e05-robotwin/step_109000.pt",
     "shapes": {
       "action": [

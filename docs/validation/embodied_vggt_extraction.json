@@ -4,7 +4,6 @@
     "checkpoint": "step_260000.pt",
     "run": "beta_joint_7n_2ep_cosine_reader_w12_v1",
     "sha256": "e35afc81970c8b8938695b866b9911c503520d5ccb0a2f2ed37a3efcfc69cf0f",
-    "format": "action_vggt_lang_recon_fastwam",
     "step": 260000
   },
   "output_file": "e05_embodied_vggt_step_260000.pt",

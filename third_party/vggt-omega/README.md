@@ -141,11 +141,11 @@ this code is made available.
 }
 ```
 
-## FastWAM distributed deployment
+## E05 distributed deployment
 
 `capture_only=True` still executes all Aggregator transformer layers. It only avoids
 retaining the `aggregated_tokens_list` return payload; selected callback K/V tensors
-remain resident because FastWAM reuses them across denoising steps.
+remain resident because E05 reuses them across denoising steps.
 
 A normal PyTorch `.pt` file cannot load only keys by prefix: loading the original
 VGGT checkpoint materializes the complete checkpoint on CPU. Before a multi-rank

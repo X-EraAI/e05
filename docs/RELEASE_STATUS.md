@@ -24,7 +24,7 @@
 | 单机 8 卡训练 smoke | 每卡 batch 8、累积 2，4 次 optimizer update；公开 VGGT 初始化，ActionDiT/bridge 随机初始化 | [训练摘要](validation/training_smoke.json) |
 | smoke 权重重载 | 动作及几何输出检查通过 | [重载摘要](validation/training_smoke_reload.json) |
 | 109k 单机 8 卡评测 smoke | 16 个 rollout 正常结束，0 worker 异常；clean 7/8、random 4/8 | [评测摘要](validation/evaluation_smoke.json) |
-| 发布前内部回归测试 | 历史记录：95 项通过 | [测试报告](validation/regression.xml) |
+| 发布前内部回归测试 | 历史记录：95 项通过 | 内部报告（不随源码发布） |
 | Hugging Face 资源验收 | 两个模型下载及加载通过；全部处理后数据安装及覆盖校验通过 | [发布记录](validation/huggingface_release.json) |
 
 每卡 batch 16 的两次尝试均发生 OOM，不能标为通过。
@@ -48,3 +48,13 @@
 相关开发过程记录已移出代码仓库。
 本地独立环境已验证可运行，从零执行锁定安装脚本的全过程未另行重跑。
 许可适用范围见 [第三方声明](../THIRD_PARTY_NOTICES.md)。
+
+## E05 命名与发布范围整理
+
+源码和配置统一使用 `e05`，仅发布语言条件动作与几何重建模型及其共享组件。
+99 项内部回归测试及 5 项迁移专项检查通过（其中 4 项包含在回归测试中）；
+原始 109k 权重加载成功，改名前后的动作与几何输出逐元素一致，实际训练数据采样与在线文本编码推理通过。
+详见 [迁移验证](validation/e05_namespace_migration.json)。本轮未重跑完整分布式训练和仿真 rollout。
+
+发布源码包不包含已移除的模型、内部测试或 Git 历史。旧 Git 提交仍含原始代码；
+仅删除当前文件并不能从历史中移除这些实现。

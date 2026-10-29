@@ -62,7 +62,7 @@ loading only the aggregator would omit the learned language projection and heads
 
 Source run: `beta_joint_7n_2ep_cosine_reader_w12_v1`.
 Source checkpoint: `step_260000.pt`, full e05 model, recorded step 260,000.
-The source's serialized identity is `action_vggt_lang_recon_fastwam`.
+The source retains its original serialized format identifier; the E05 loader translates it at load time.
 
 The extraction keeps all VGGT parameters and buffers:
 

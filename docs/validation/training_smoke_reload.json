@@ -1,7 +1,6 @@
 {
   "passed": true,
   "model_name": "e05",
-  "model_class": "fastwam.models.wan22.e05.E05",
   "checkpoint": "${E05_ROOT}/runs/e05_smoke_train_8gpu_bs8_acc2_20261028_173021/checkpoints/weights/step_000004.pt",
   "shapes": {
     "action": [

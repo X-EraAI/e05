@@ -31,7 +31,7 @@
 from e05 import E05, create_e05
 ```
 
-Hydra 配置使用 `e05.create_e05`，RoboTwin 使用 `task=e05` 和 `e05_policy`。内部共享模块及旧 checkpoint 标识保留兼容。详见[命名说明](docs/NAMING.md)和[模型卡](docs/MODEL_CARD.md)。
+Hydra 配置使用 `e05.create_e05`，RoboTwin 使用 `task=e05` 和 `e05_policy`。实现与共享组件统一位于 `src/e05/`，加载器兼容原始发布权重。详见[命名说明](docs/NAMING.md)和[模型卡](docs/MODEL_CARD.md)。
 
 ## 安装
 
@@ -203,4 +203,4 @@ bash scripts/evaluate.sh EVALUATION.eval_num_episodes=100 EVALUATION.phase=both
 
 ## 许可与致谢
 
-仓库代码遵循 [LICENSE](LICENSE)，第三方材料保留各自适用条款。本项目基于 VGGT-Omega、RoboTwin、cuRobo 和 Wan/T5 组件构建。VGGT-Omega 包含非商业研究条款；本仓库的代码许可证不改变模型权重、处理后数据和仿真资产的许可。请参阅[第三方声明](THIRD_PARTY_NOTICES.md)及各材料附带的许可证。
+仓库代码遵循 [LICENSE](LICENSE)，第三方材料保留各自适用条款。本项目基于 VGGT-Omega、FastWAM、RoboTwin、cuRobo 和 Wan/T5 组件构建。VGGT-Omega 包含非商业研究条款；本仓库的代码许可证不改变模型权重、处理后数据和仿真资产的许可。请参阅[第三方声明](THIRD_PARTY_NOTICES.md)及各材料附带的许可证。

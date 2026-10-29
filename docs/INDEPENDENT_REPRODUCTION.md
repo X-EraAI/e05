@@ -3,7 +3,7 @@
 This audit starts from `Likeooo/e05` commit
 `1b64aa60e71a3faa165c58f1691cb8eabb3a1e4b` in a fresh checkout and Conda prefix.
 It tests the README workflow and records required corrections to that commit.
-During independent reproduction, the source FastWAM/E05 repositories and their
+During independent reproduction, the source E05/E05 repositories and their
 environments were not used as editable installs or modified. The verified source
 fixes were subsequently integrated into E05 with user authorization; existing
 environments were not modified. No remote changes were pushed.

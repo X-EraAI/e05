@@ -40,8 +40,8 @@ depth is in the learned scene-normalized scale, not directly metres; training
 cache depth is metric before the official loss normalization.
 
 Public model ID: `e05`; Python API: `e05.E05` / `e05.create_e05`. The original
-serialized checkpoint format and source run IDs remain unchanged for compatibility
-and provenance. See the code repository documentation `docs/NAMING.md`.
+checkpoint files and source run IDs remain unchanged for compatibility
+and provenance; new weight checkpoints use the `e05` format. See the code repository documentation `docs/NAMING.md`.
 
 Real-robot training uses a separate embodied-pretrained VGGT resource extracted
 from the complete step-260000 e05 model. See [checkpoint resources](CHECKPOINTS.md).

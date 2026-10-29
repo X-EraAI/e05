@@ -1,8 +1,7 @@
 # Third-party materials
 
-E05 retains the FastWAM copyright and MIT license for code covered by that license.
-This does not override the terms on vendored code, upstream model weights, data,
-or simulator assets.
+Vendored code, upstream model weights, data, and simulator assets retain their
+applicable third-party terms.
 
 - VGGT-Omega: facebookresearch/vggt-omega, pinned source commit documented in
   `third_party/vggt-omega/README.vendor.md`. Preserve its FAIR Noncommercial Research
@@ -11,7 +10,7 @@ or simulator assets.
   model card and applicable upstream terms. Do not label the complete E05 model
   unrestricted MIT or commercially licensed.
 - Vendored official geometry loss and augmentation retain their LICENSE and
-  PROVENANCE files under `src/fastwam`.
+  PROVENANCE files under `src/e05`.
 - RoboTwin source: MIT, commit `bf44be51cf5717a5595ce59447f2cf5263d2aa95`;
   see `third_party/RoboTwin/LICENSE` and README.vendor.md.
 - cuRobo: preserve the NVIDIA notices and LICENSE in `third_party/curobo`.
@@ -23,7 +22,7 @@ or simulator assets.
 
 Local adaptations: portable configuration and entrypoints, isolated execution,
 lossless cache shard loading, non-writing inference text cache, smoke evidence,
-release packaging, and worker/cache lifecycle fixes for NFS. Model architecture and checkpoint serialization are retained.
+release packaging, and worker/cache lifecycle fixes for NFS. The released model architecture is retained. Package and public model names are unified under E05; a compatibility reader preserves access to the original released checkpoint files.
 
 Embodied-pretrained VGGT resource: extracted from the VGGT branch of the e05
 step-260000 checkpoint. The aggregator, language projector and geometry heads

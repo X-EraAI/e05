@@ -10,8 +10,8 @@ License compliance notes:
 
 - The original upstream license is preserved in [`LICENSE`](./LICENSE).
 - Files copied from RoboTwin remain subject to the MIT License in this directory.
-- For this project, the only locally maintained policy implementation is `policy/fastwam`.
-- `policy/fastwam` contains project-specific code authored for this repository and is not copied from the other upstream `policy/*` subprojects.
+- For this project, the only locally maintained policy implementation is `experiments/robotwin/e05_policy/`.
+- `experiments/robotwin/e05_policy/` contains project-specific code authored for this repository and is not copied from the other upstream `policy/*` subprojects.
 - If code is later copied from any upstream subdirectory with an additional license notice, the corresponding license file and attribution must also be preserved.
 
 Local modifications:

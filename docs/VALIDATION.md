@@ -53,3 +53,8 @@ on NFS. Persistent workers close before interpreter shutdown. This leaves sampli
 model parameters, augmentation and optimizer semantics unchanged. The earlier
 reduced-batch audit additionally compared augmentation hashes before/after the
 cleanup fix. These checks were part of the internal validation suite.
+
+The public implementation is limited to E05 and its shared components. The original
+release checkpoints remain readable through a small checkpoint compatibility module;
+new checkpoints use the `e05` format. Historical validation summaries omit obsolete
+Python class identifiers; original reports are archived locally.

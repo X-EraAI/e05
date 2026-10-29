@@ -1,0 +1,122 @@
+{
+  "package": "e05",
+  "model_class": "e05.models.wan22.e05.E05",
+  "public_factory": "e05.create_e05",
+  "new_checkpoint_format": "e05",
+  "original_release_checkpoint_load": "passed",
+  "regression": {
+    "passed": 99
+  },
+  "migration_checks": {
+    "passed": 5,
+    "note": "Four overlap with the regression suite; the fifth additionally rejects removed loop-model options."
+  },
+  "original_vs_migrated_inference": {
+    "action": {
+      "shape": [
+        32,
+        14
+      ],
+      "exact_match": true
+    },
+    "normalized_action": {
+      "shape": [
+        32,
+        14
+      ],
+      "exact_match": true
+    },
+    "future_scale_convention": {
+      "shape": [],
+      "exact_match": true
+    },
+    "future_depth": {
+      "shape": [
+        1,
+        3,
+        224,
+        288,
+        1
+      ],
+      "exact_match": true
+    },
+    "future_confidence": {
+      "shape": [
+        1,
+        3,
+        224,
+        288
+      ],
+      "exact_match": true
+    },
+    "future_pose": {
+      "shape": [
+        1,
+        3,
+        9
+      ],
+      "exact_match": true
+    }
+  },
+  "production_dataset": {
+    "passed": true,
+    "length": 549787,
+    "sample_indices": [
+      0,
+      64,
+      138,
+      549786
+    ]
+  },
+  "release_scope": {
+    "removed": [
+      "Gen3R adapters",
+      "MoE models",
+      "multistage models",
+      "loop variants",
+      "latent variants",
+      "depth-only variants",
+      "video model variants"
+    ],
+    "wheel_verified": true,
+    "source_archive_verified": true
+  },
+  "limitations": [
+    "Full distributed training and simulator rollout were not rerun for this namespace migration.",
+    "Original serialized identifiers are retained only at the compatibility boundary; upstream attribution is retained.",
+    "The source archive excludes Git history; earlier repository commits still contain removed code."
+  ],
+  "online_text_inference": {
+    "passed": true,
+    "model_class": "e05.models.wan22.e05.E05",
+    "shapes": {
+      "action": [
+        32,
+        14
+      ],
+      "normalized_action": [
+        32,
+        14
+      ],
+      "future_scale_convention": [],
+      "future_depth": [
+        1,
+        3,
+        224,
+        288,
+        1
+      ],
+      "future_confidence": [
+        1,
+        3,
+        224,
+        288
+      ],
+      "future_pose": [
+        1,
+        3,
+        9
+      ]
+    }
+  }
+}

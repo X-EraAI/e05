@@ -29,7 +29,7 @@ Geometry ground truth is required for the reconstruction loss during training, b
 from e05 import E05, create_e05
 ```
 
-Hydra configurations use `e05.create_e05`; RoboTwin uses `task=e05` and `e05_policy`. Internal shared modules and legacy checkpoint identifiers are retained for compatibility. See [model naming](docs/NAMING.md) and the [model card](docs/MODEL_CARD.md).
+Hydra configurations use `e05.create_e05`; RoboTwin uses `task=e05` and `e05_policy`. Implementation and shared modules live under `src/e05/`; the loader remains compatible with the original released checkpoints. See [model naming](docs/NAMING.md) and the [model card](docs/MODEL_CARD.md).
 
 ## Installation
 
@@ -202,4 +202,4 @@ Logs, resolved configurations, and results are saved under `runs/`. The full eva
 
 ## License and acknowledgments
 
-Repository code is covered by [LICENSE](LICENSE), with third-party materials retaining their respective terms. This project builds on VGGT-Omega, RoboTwin, cuRobo, and Wan/T5 components. VGGT-Omega includes noncommercial research terms; the repository's code license does not relicense model weights, processed data, or simulator assets. Consult [third-party notices](THIRD_PARTY_NOTICES.md) and the licenses retained alongside those materials.
+Repository code is covered by [LICENSE](LICENSE), with third-party materials retaining their respective terms. This project builds on VGGT-Omega, FastWAM, RoboTwin, cuRobo, and Wan/T5 components. VGGT-Omega includes noncommercial research terms; the repository's code license does not relicense model weights, processed data, or simulator assets. Consult [third-party notices](THIRD_PARTY_NOTICES.md) and the licenses retained alongside those materials.
