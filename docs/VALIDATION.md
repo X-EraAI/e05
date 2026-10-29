@@ -1,10 +1,13 @@
 # Validation protocol
 
-The release runs the existing language-conditioned backbone, language padding mask,
-checkpoint, loss, current/future target, and augmentation regression tests relevant
-to E05. Tests targeting unshipped EE/MoE/finetuning configurations or old `work/`
-diagnostics were removed from the copied suite; E05 configuration, standalone
-inference and lossless cache-shard tests replace those interfaces.
+Pre-release internal regression checks covered the language-conditioned backbone,
+language padding mask, checkpoint loading, losses, current/future targets,
+augmentation, E05 configuration, standalone inference and lossless cache shards.
+The test suite and its runner are maintained internally and are not distributed
+in this repository. Published regression results describe internal validation;
+they are not commands that can be rerun from a public checkout.
+The public environment/data validation and training/evaluation smoke scripts remain
+available under `scripts/`.
 
 The original training smoke target uses 8 ranks, batch 8/rank, accumulation 1, original model size,
 augmentation enabled and official loss 0.01. `stop_after_steps=4` stops execution;
@@ -44,9 +47,9 @@ and gradients, parameter changes, and absence of training/cleanup tracebacks.
 Distributed workers set distinct Triton
 cache directories before importing DeepSpeed to avoid shared-NFS exit races.
 
-The current training run and regression suite also passed worker shutdown checks. On Linux, worker
+The recorded training run and internal regression suite also passed worker shutdown checks. On Linux, worker
 tensor IPC uses abstract Unix sockets, so temporary socket files are not unlinked
 on NFS. Persistent workers close before interpreter shutdown. This leaves sampling,
 model parameters, augmentation and optimizer semantics unchanged. The earlier
 reduced-batch audit additionally compared augmentation hashes before/after the
-cleanup fix. See `tests/test_worker_shutdown.py`.
+cleanup fix. These checks were part of the internal validation suite.

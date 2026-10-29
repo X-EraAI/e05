@@ -95,7 +95,7 @@ a real-robot task configuration, convergence, or exact reproduction of the origi
 
 - Fresh dependency installation, `pip check`, module/cache isolation: passed.
 - Full processed-data installation and validation: passed.
-- Existing and added regression tests: 96 passed.
+- Pre-release internal regression tests: 96 passed (test sources and runner are not distributed).
 - Original 109k standalone online-text action/geometry inference: passed.
 - Public and embodied VGGT eight-GPU batch-2 training plus reload: passed.
 - Ray tracing with 32 samples/pixel, depth 8 and OIDN 2.3.3: passed.

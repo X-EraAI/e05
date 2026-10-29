@@ -20,3 +20,7 @@ build/
 outputs/
 multirun/
 third_party/RoboTwin/assets/
+
+# Internal validation suite (restore locally when needed).
+/tests/
+/scripts/regression.sh

@@ -96,7 +96,7 @@ an unchanged source-file digest. See
 The complete `e05.create_e05` construction path was also exercised on CPU with
 the initialization preset: all 1,415 VGGT tensor values loaded successfully,
 public VGGT paths were disabled, and ActionDiT/bridge probes differed from the
-source model. Two existing backbone-loading regression tests passed. See
+source model. Two internal backbone-loading regression tests passed before release. See
 [loading verification](validation/embodied_vggt_loading.json). The CPU
 construction check used FP32 modules; the exported file retains the source
 mixed dtypes. No real-robot training or rollout was executed for this extraction.

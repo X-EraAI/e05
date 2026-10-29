@@ -13,13 +13,14 @@ def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,default=Path('dist'));mode=p.add_mutually_exclusive_group();mode.add_argument('--code-only',action='store_true');mode.add_argument('--code-and-model',action='store_true');a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
  code=out/'E05-code.tar.gz'
  with tarfile.open(code,'w:gz',compresslevel=1) as tar:
-  for name in ['src','scripts','configs','tests','docs','examples','experiments','third_party','README.md','LICENSE','THIRD_PARTY_NOTICES.md','pyproject.toml','requirements.txt','requirements.lock.txt','environment.conda.lock.txt','.gitignore']:
+  for name in ['src','scripts','configs','docs','examples','experiments','third_party','README.md','LICENSE','THIRD_PARTY_NOTICES.md','pyproject.toml','requirements.txt','requirements.lock.txt','environment.conda.lock.txt','.gitignore']:
    pth=ROOT/name
    if not pth.exists():continue
    def filt(info):
     parts=Path(info.name).parts
     if any(x in parts for x in ['__pycache__','.git','.pytest_cache']):return None
     if info.name.startswith('E05/third_party/RoboTwin/assets'):return None
+    if info.name == 'E05/scripts/regression.sh':return None
     if info.name.endswith(('.pyc','.so','.log')):return None
     info.uid=info.gid=0;info.uname=info.gname='';return info
    tar.add(pth,arcname='E05/'+name,filter=filt)
