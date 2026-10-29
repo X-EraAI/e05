@@ -17,8 +17,14 @@ smoke executes 8 tasks × clean/random × 1 episode = 16 rollouts, at seed 42,
 action horizon 32, replan 24 and 10 denoising steps. A completed unsuccessful
 manipulation is a valid rollout; worker crashes and missing results fail validation.
 
-Environment and execution reports are written to `artifacts/` and `runs/`.
-Historical benchmark results live separately in `artifacts/historical/`.
+Environment and execution reports are written to `outputs/validation/` and `runs/`.
+Historical benchmark results live separately in `docs/validation/historical/`.
+Published validation summaries in `docs/validation/` are historical evidence, not
+outputs to overwrite on each run. Paths embedded in these reports describe the
+original validation environment; references to the former `artifacts/` directory,
+temporary audit scripts, run directories, and verification copies are provenance,
+not required files in a fresh checkout. Development records are excluded from Git;
+the local pre-cleanup backup is under `audit/artifacts-before-cleanup/`.
 
 For short smoke runs, `save_state_at_stop=false` saves the step-4 weight checkpoint
 without serializing an unused optimizer state. The default is true for normal

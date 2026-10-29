@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "symlinks_checked": 2797,
-  "links_to_source_project_or_environment": [],
-  "method": "Inspect symlink targets and resolve chains within E05 without following symlink directories.",
-  "public_policy_link": "../../../experiments/robotwin/e05_policy"
-}

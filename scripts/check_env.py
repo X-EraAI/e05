@@ -2,7 +2,7 @@ import json,os,sys,importlib,subprocess
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 (root/"audit").mkdir(exist_ok=True)
-(root/"artifacts").mkdir(exist_ok=True)
+(root/"outputs/validation").mkdir(parents=True,exist_ok=True)
 report={'python':sys.executable,'prefix':sys.prefix,'modules':{},'cache_paths':{}}
 assert Path(sys.prefix).resolve().is_relative_to(root),sys.prefix
 for name in ['torch','e05','fastwam','vggt_omega','curobo','sapien','mplib','av','datasets','deepspeed','transformers']:
@@ -16,5 +16,5 @@ assert report['gpu_count']>=8,'Eight visible GPUs are required for the planned s
 report['passed']=True
 (root/'audit/environment_report.full.json').write_text(json.dumps(report,indent=2))
 public=json.loads(json.dumps(report).replace(str(root),'${E05_ROOT}'))
-(root/'artifacts/environment_report.json').write_text(json.dumps(public,indent=2))
+(root/'outputs/validation/environment_report.json').write_text(json.dumps(public,indent=2))
 print(json.dumps(report,indent=2))

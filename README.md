@@ -44,7 +44,7 @@ python scripts/download_components.py
 
 The installer creates an isolated Conda environment at `.envs/e05`. The provided environment check targets a Linux machine with eight visible CUDA GPUs; standalone model inference uses one GPU. A compatible NVIDIA driver and CUDA toolkit are required. RoboTwin evaluation additionally requires Vulkan rendering support.
 
-Dependencies are recorded in `requirements.lock.txt` and `environment.conda.lock.txt`. Source `scripts/env.sh` in each new shell to configure imports and project-local caches. The component downloader verifies public VGGT initialization weights, the text encoder, and tokenizer against [recorded checksums](artifacts/component_manifest.json). It does **not** download the trained e05 109k checkpoint, the embodied-pretrained VGGT checkpoint, or processed training data.
+Dependencies are recorded in `requirements.lock.txt` and `environment.conda.lock.txt`. Source `scripts/env.sh` in each new shell to configure imports and project-local caches. The component downloader verifies public VGGT initialization weights, the text encoder, and tokenizer against [recorded checksums](configs/resources/component_manifest.json). It does **not** download the trained e05 109k checkpoint, the embodied-pretrained VGGT checkpoint, or processed training data.
 
 See [installation details](docs/INSTALL.md) for environment validation and simulator setup.
 Fresh-checkout findings and their scope are recorded in the [independent reproduction notes](docs/INDEPENDENT_REPRODUCTION.md).
@@ -102,7 +102,7 @@ The 109k checkpoint is an intermediate checkpoint recorded at epoch 50 of the or
 | `release/step_109000.pt` | Complete RoboTwin e05 model for inference and evaluation |
 | `embodied-vggt/e05_embodied_vggt_step_260000.pt` | Embodied-pretrained VGGT for real-robot training; extracted from the step-260000 e05 model |
 
-Paths are relative to `checkpoints/`. The embodied checkpoint contains the aggregator, language projector, camera head, and dense head, with no action expert, bridge, or proprio encoder. See the [checkpoint resource manifest](artifacts/checkpoint_manifest.json) and [checkpoint documentation](docs/CHECKPOINTS.md) for checksums, provenance, and loading instructions. These are separate checkpoint resources, not Git-tracked binaries; public downloads are linked below.
+Paths are relative to `checkpoints/`. The embodied checkpoint contains the aggregator, language projector, camera head, and dense head, with no action expert, bridge, or proprio encoder. See the [checkpoint resource manifest](configs/resources/checkpoint_manifest.json) and [checkpoint documentation](docs/CHECKPOINTS.md) for checksums, provenance, and loading instructions. These are separate checkpoint resources, not Git-tracked binaries; public downloads are linked below.
 
 ### Download published resources
 

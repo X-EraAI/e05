@@ -2,7 +2,7 @@
   "schema_version": 1,
   "model": "e05",
   "path_base": "checkpoints/",
-  "public_component_manifest": "artifacts/component_manifest.json",
+  "public_component_manifest": "configs/resources/component_manifest.json",
   "resources": [
     {
       "id": "e05-robotwin-109k",

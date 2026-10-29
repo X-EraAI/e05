@@ -1,8 +1,0 @@
-...                                                                      [100%]
-=============================== warnings summary ===============================
-.envs/e05/lib/python3.10/site-packages/torch/jit/_script.py:1480
-  ${E05_ROOT}/.envs/e05/lib/python3.10/site-packages/torch/jit/_script.py:1480: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
-    warnings.warn(
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-3 passed, 1 warning in 63.26s (0:01:03)

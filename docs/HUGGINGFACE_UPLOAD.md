@@ -1,6 +1,6 @@
 # e05：Hugging Face 资源上传指南
 
-本指南按当前 E05 文件布局编写。代码继续放在 Git 仓库；Hugging Face 用于托管独立 checkpoint 和处理后数据。不需要上传代码压缩包或模型 tar 包。本项目资源已上传到 `X-EraAI` 的三个仓库，固定版本和校验状态见 [发布记录](../artifacts/huggingface_release.json)。以下步骤保留为后续维护指南。
+本指南按当前 E05 文件布局编写。代码继续放在 Git 仓库；Hugging Face 用于托管独立 checkpoint 和处理后数据。不需要上传代码压缩包或模型 tar 包。本项目资源已上传到 `X-EraAI` 的三个仓库，固定版本和校验状态见 [发布记录](validation/huggingface_release.json)。以下步骤保留为后续维护指南。
 
 ## 1. 上传哪些资源
 
@@ -29,7 +29,7 @@
 ## 2. 哪些资源不必重复上传
 
 - **代码**：在 GitHub 等代码仓库发布 `src/`、`scripts/`、`configs/`、`third_party/` 中所需源码、依赖锁文件和文档，不需要上传 `E05-code.tar.gz`。
-- **公开 VGGT 初始化、文本编码器和 tokenizer**：保留 `artifacts/component_manifest.json` 与 `scripts/download_components.py`，继续从记录的上游下载。
+- **公开 VGGT 初始化、文本编码器和 tokenizer**：保留 `configs/resources/component_manifest.json` 与 `scripts/download_components.py`，继续从记录的上游下载。
 - **完整 step-260000 e05 源 checkpoint**：不需要上传。本次发布的是从中提取的 VGGT-only 权重，排除了 action expert、bridge 和 proprio encoder。
 - **Smoke 权重、optimizer state、训练历史 runs、环境目录、缓存、账号凭据及本地 audit**：不属于这些 Hub 仓库的上传内容。
 - **仿真资产**：可以引用匹配版本的 RoboTwin 上游资产。若选择另行托管，且其条款允许，可用独立 Dataset 仓库保存现有 `dist/E05-simulator-assets.zip`（约 13.95 GiB）、资产清单及来源/许可说明；不要混进模型权重仓库。
@@ -136,8 +136,8 @@ VGGT_INITIALIZATION_CARD.md
 hf upload "$HF_NAMESPACE/e05-embodied-vggt" checkpoints/embodied-vggt . --exclude model_card.md
 hf upload "$HF_NAMESPACE/e05-embodied-vggt" audit/hf-cards/embodied-vggt.md README.md
 hf upload "$HF_NAMESPACE/e05-embodied-vggt" configs/model_init/embodied_vggt.yaml embodied_vggt.yaml
-hf upload "$HF_NAMESPACE/e05-embodied-vggt" artifacts/embodied_vggt_extraction.json extraction.json
-hf upload "$HF_NAMESPACE/e05-embodied-vggt" artifacts/embodied_vggt_loading.json loading_validation.json
+hf upload "$HF_NAMESPACE/e05-embodied-vggt" docs/validation/embodied_vggt_extraction.json extraction.json
+hf upload "$HF_NAMESPACE/e05-embodied-vggt" docs/validation/embodied_vggt_loading.json loading_validation.json
 hf upload "$HF_NAMESPACE/e05-embodied-vggt" THIRD_PARTY_NOTICES.md THIRD_PARTY_NOTICES.md
 hf upload "$HF_NAMESPACE/e05-embodied-vggt" third_party/vggt-omega/LICENSE LICENSE-VGGT-Omega
 hf upload "$HF_NAMESPACE/e05-embodied-vggt" docs/VGGT_INITIALIZATION_CARD.md VGGT_INITIALIZATION_CARD.md
@@ -205,7 +205,7 @@ python scripts/validate_data.py --data-root .cache/hf-verify/installed-data --fu
 发布成功后，再更新以下位置：
 
 1. `README.md` 与 `README_zh-CN.md`：在 checkpoint 和数据章节放实际仓库链接，替换“尚未配置公开下载入口”的说明。
-2. `artifacts/checkpoint_manifest.json`：为两个资源填写真实 `repo_id`、下载 URL 和上传后确认的 revision；现有 SHA256 保持不变。
+2. `configs/resources/checkpoint_manifest.json`：为两个资源填写真实 `repo_id`、下载 URL 和上传后确认的 revision；现有 SHA256 保持不变。
 3. `docs/CHECKPOINTS.md`、`docs/DATA_CARD.md`、`docs/INSTALL.md`：写明获取方式与实际仓库名。
 4. 两个 Model 仓库和 Dataset 仓库的 `README.md`：相互链接到代码、权重和数据资源。
 

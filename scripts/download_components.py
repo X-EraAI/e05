@@ -10,7 +10,7 @@ def sha(p):
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=Path('checkpoints'));a=p.parse_args()
- items=json.loads(Path('artifacts/component_manifest.json').read_text())['files']
+ items=json.loads(Path('configs/resources/component_manifest.json').read_text())['files']
  for item in items:
   target=a.root/item['path']
   if target.exists() and sha(target)==item['sha256']:continue

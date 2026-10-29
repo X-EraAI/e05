@@ -12,7 +12,7 @@ def digest(path):
  return h.hexdigest()
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--data-root',type=Path,default=Path('data'));p.add_argument('--full',action='store_true');p.add_argument('--report',type=Path,default=Path('artifacts/data_validation.json'));a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--data-root',type=Path,default=Path('data'));p.add_argument('--full',action='store_true');p.add_argument('--report',type=Path,default=Path('outputs/validation/data_validation.json'));a=p.parse_args()
  root=a.data_root;ds=root/'robotwin_clean_xera_v21';info=json.loads((ds/'meta/info.json').read_text())
  eps=[json.loads(x) for x in (ds/'meta/episodes.jsonl').open()]
  assert info['total_episodes']==len(eps)==2500

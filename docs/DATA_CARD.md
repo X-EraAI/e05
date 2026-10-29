@@ -50,4 +50,4 @@ be retained; the source code MIT license does not relicense these materials.
 
 [Processed RoboTwin data](https://huggingface.co/datasets/X-EraAI/e05-robotwin-data) is published as existing lossless shards.
 Use the [download and installation commands](../README.md#download-published-resources).
-The pinned revision and validation status are recorded in [release evidence](../artifacts/huggingface_release.json).
+The pinned revision and validation status are recorded in [release evidence](validation/huggingface_release.json).

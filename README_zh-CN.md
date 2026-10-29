@@ -46,7 +46,7 @@ python scripts/download_components.py
 
 安装脚本在 `.envs/e05` 创建独立 Conda 环境。提供的环境检查面向具有 8 张可见 CUDA GPU 的 Linux 节点；独立模型推理使用单张 GPU。运行需要兼容的 NVIDIA 驱动和 CUDA Toolkit，RoboTwin 评测还需要 Vulkan 渲染支持。
 
-依赖版本记录在 `requirements.lock.txt` 和 `environment.conda.lock.txt`。每次打开新的 shell 后，请先执行 `source scripts/env.sh`，以配置模块导入路径和项目内缓存。组件下载脚本根据[记录的摘要](artifacts/component_manifest.json)校验公开 VGGT 初始化权重、文本编码器及 tokenizer；该脚本**不会**下载训练完成的 e05 109k checkpoint、具身预训练 VGGT checkpoint 或处理好的训练数据。
+依赖版本记录在 `requirements.lock.txt` 和 `environment.conda.lock.txt`。每次打开新的 shell 后，请先执行 `source scripts/env.sh`，以配置模块导入路径和项目内缓存。组件下载脚本根据[记录的摘要](configs/resources/component_manifest.json)校验公开 VGGT 初始化权重、文本编码器及 tokenizer；该脚本**不会**下载训练完成的 e05 109k checkpoint、具身预训练 VGGT checkpoint 或处理好的训练数据。
 
 环境检查和仿真配置详见[安装说明](docs/INSTALL.md)。独立 checkout 中发现的安装问题、修复和验证范围记录在[独立复现说明](docs/INDEPENDENT_REPRODUCTION.md)。
 
@@ -103,7 +103,7 @@ python scripts/validate_data.py --data-root ./data --full
 | `release/step_109000.pt` | 完整 RoboTwin e05 模型，用于推理和评测 |
 | `embodied-vggt/e05_embodied_vggt_step_260000.pt` | 用于真机训练的具身预训练 VGGT，从 step-260000 的 e05 完整模型中提取 |
 
-上述路径均相对于 `checkpoints/`。具身预训练权重包含 aggregator、语言 projector、camera head 和 dense head，不包含 action expert、bridge 或 proprio encoder。摘要、来源和加载方式见 [checkpoint 资源清单](artifacts/checkpoint_manifest.json)和[权重说明](docs/CHECKPOINTS.md)。权重作为独立 checkpoint 资源提供，不作为二进制文件提交至 Git；公开下载入口见下方。
+上述路径均相对于 `checkpoints/`。具身预训练权重包含 aggregator、语言 projector、camera head 和 dense head，不包含 action expert、bridge 或 proprio encoder。摘要、来源和加载方式见 [checkpoint 资源清单](configs/resources/checkpoint_manifest.json)和[权重说明](docs/CHECKPOINTS.md)。权重作为独立 checkpoint 资源提供，不作为二进制文件提交至 Git；公开下载入口见下方。
 
 ### 下载已发布资源
 

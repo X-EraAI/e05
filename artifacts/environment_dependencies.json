@@ -1,8 +1,0 @@
-{
-  "passed": true,
-  "fsspec": "2025.3.0",
-  "note": "Compatibility fix applied only to E05 isolated environment; source environment unchanged.",
-  "post_rename_pip_check": "No broken requirements found.",
-  "public_package": "e05",
-  "public_import_origin": "${E05_ROOT}/src/e05/__init__.py"
-}

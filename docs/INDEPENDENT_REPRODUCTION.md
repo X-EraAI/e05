@@ -19,7 +19,7 @@ environments were not modified. No remote changes were pushed.
 - Simulator archives: `TianxingChen/RoboTwin2.0`, revision
   `3dc3b798668feb99ac61cc9086d84cbcc3d79186`.
 - Text encoder/tokenizer: independently downloaded from ModelScope and verified
-  against `artifacts/component_manifest.json`.
+  against `configs/resources/component_manifest.json`.
 - Public VGGT: the user authorized copying the already downloaded public weight
   because access to its Hub download was unavailable. This independent file copy
   matches the release manifest SHA256. The aggregator was extracted locally and
@@ -106,7 +106,7 @@ a real-robot task configuration, convergence, or exact reproduction of the origi
 Detailed local evidence remains under `audit/reproduction` and
 `runs/reproduction_*` in the separate `e05-repro-clean` checkout. These large
 logs/checkpoints are intentionally ignored by Git and were not copied into E05. The final evidence audit passed and the portable summary is
-[`artifacts/independent_reproduction.json`](../artifacts/independent_reproduction.json).
+[`docs/validation/independent_reproduction.json`](validation/independent_reproduction.json).
 The original commit required the corrections listed above; an unmodified checkout
 of that commit does not reproduce this result. The verified source fixes and this portable report have been integrated into
 E05. No remote changes were pushed during reproduction or integration.

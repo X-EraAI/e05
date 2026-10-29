@@ -18,7 +18,8 @@ def main():
                 row['fields'][key] = {'shape': list(value.shape), 'dtype': str(value.dtype)}
         rows.append(row)
         print(json.dumps(row), flush=True)
-    Path('artifacts/production_dataset.json').write_text(json.dumps({
+    Path('outputs/validation').mkdir(parents=True, exist_ok=True)
+    Path('outputs/validation/production_dataset.json').write_text(json.dumps({
         'passed': True, 'length': len(ds), 'augmentation_enabled': True,
         'samples': rows,
     }, indent=2))

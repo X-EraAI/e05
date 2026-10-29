@@ -1,10 +1,10 @@
 # e05 checkpoint resources
 
 Checkpoint files are distributed separately from the Git repository. The catalog
-in [checkpoint_manifest.json](../artifacts/checkpoint_manifest.json) records their
+in [checkpoint_manifest.json](../configs/resources/checkpoint_manifest.json) records their
 intended use, local paths, sizes and SHA256. Public resources are hosted at [X-EraAI/e05-robotwin](https://huggingface.co/X-EraAI/e05-robotwin) and
 [X-EraAI/e05-embodied-vggt](https://huggingface.co/X-EraAI/e05-embodied-vggt). Public upstream VGGT and text components are listed separately in
-[component_manifest.json](../artifacts/component_manifest.json).
+[component_manifest.json](../configs/resources/component_manifest.json).
 
 | Resource | Use | Default path |
 |---|---|---|
@@ -91,13 +91,13 @@ vggt_backbone: complete VGGT state_dict
 
 The extraction report records byte-for-byte tensor equality, finite values, and
 an unchanged source-file digest. See
-[extraction verification](../artifacts/embodied_vggt_extraction.json).
+[extraction verification](validation/embodied_vggt_extraction.json).
 
 The complete `e05.create_e05` construction path was also exercised on CPU with
 the initialization preset: all 1,415 VGGT tensor values loaded successfully,
 public VGGT paths were disabled, and ActionDiT/bridge probes differed from the
 source model. Two existing backbone-loading regression tests passed. See
-[loading verification](../artifacts/embodied_vggt_loading.json). The CPU
+[loading verification](validation/embodied_vggt_loading.json). The CPU
 construction check used FP32 modules; the exported file retains the source
 mixed dtypes. No real-robot training or rollout was executed for this extraction.
 
@@ -112,7 +112,7 @@ python scripts/extract_embodied_vggt.py \
   --source /path/to/full_e05/step_260000.pt \
   --output checkpoints/embodied-vggt/e05_embodied_vggt_step_260000.pt \
   --source-run beta_joint_7n_2ep_cosine_reader_w12_v1 \
-  --report artifacts/embodied_vggt_extraction.json
+  --report outputs/validation/embodied_vggt_extraction.json
 ```
 
 An existing output checkpoint is not overwritten. Tensor keys, shapes, dtypes and

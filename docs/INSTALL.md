@@ -30,7 +30,7 @@ source scripts/env.sh
 python scripts/download_components.py
 ```
 
-Files are pinned by SHA256 in `artifacts/component_manifest.json`. Repository
+Files are pinned by SHA256 in `configs/resources/component_manifest.json`. Repository
 revisions may be mutable; the downloader refuses bytes that differ from the
 recorded release. The separate VGGT aggregator is a tensor-identical extraction
 of the public text-alignment checkpoint, not an internally trained model.
@@ -40,7 +40,7 @@ with the full public checkpoint is the compatibility criterion.
 RoboTwin source and local integration changes are vendored at the recorded
 upstream commit in `third_party/RoboTwin/README.vendor.md`. Use the compatible
 asset snapshot if available separately, or obtain the matching assets
-from the RoboTwin project and compare against `artifacts/simulator_assets.jsonl`.
+from the RoboTwin project and compare against `configs/resources/simulator_assets.jsonl`.
 Required simulator task configurations are included in
 `third_party/RoboTwin/task_config`: clean/random evaluation, camera definitions,
 embodiment paths and episode step limits. Keep these files in Git.

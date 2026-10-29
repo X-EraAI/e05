@@ -18,7 +18,7 @@ bridge parameters; E05 explicitly uses legacy optimizer grouping to retain this
 behavior. Current generic training defaults must not replace it implicitly.
 
 The reference weight file was validated without serialization changes. Its
-identity is recorded in `artifacts/checkpoint_integrity.json`. It is not included in the Git repository; download it from
+identity is recorded in `docs/validation/checkpoint_integrity.json`. It is not included in the Git repository; download it from
 [X-EraAI/e05-robotwin](https://huggingface.co/X-EraAI/e05-robotwin). When using an externally supplied checkpoint, retain its matching
 normalization statistics. The portable training configuration is
 `configs/release.yaml`.

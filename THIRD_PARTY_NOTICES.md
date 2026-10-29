@@ -29,7 +29,7 @@ Embodied-pretrained VGGT resource: extracted from the VGGT branch of the e05
 step-260000 checkpoint. The aggregator, language projector and geometry heads
 retain applicable VGGT-Omega upstream model/code terms. This extraction does
 not change those terms or apply the repository MIT code license to the weights.
-Resource identity is recorded in `artifacts/checkpoint_manifest.json`.
+Resource identity is recorded in `configs/resources/checkpoint_manifest.json`.
 
 Open Image Denoise 2.3.3 is downloaded separately from the official RenderKit/oidn
 release by scripts/setup_oidn.py to support Blackwell rendering. Its upstream
