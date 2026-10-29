@@ -155,9 +155,9 @@ export E05_EMBODIED_VGGT_CHECKPOINT=/path/to/e05_embodied_vggt_step_260000.pt
 
 Add `+model_init=embodied_vggt` to the Hydra overrides of your real-robot training command. The [initialization preset](configs/model_init/embodied_vggt.yaml) loads `model.vggt_backbone_pretrained_checkpoint_path` and disables public VGGT and full-model initialization. Do not pass this VGGT-only resource as `resume` or `model.pretrained_checkpoint_path`.
 
-This preset changes model initialization only. Supply a real-robot task configuration with the appropriate data, normalization, camera order, action/state dimensions, and reconstruction targets. The default training task and the smoke results above remain RoboTwin; applying the initialization preset does not itself define or validate a real-robot training pipeline.
+This preset changes model initialization only. Supply a real-robot task configuration with the appropriate data, normalization, camera order, action/state dimensions, and reconstruction targets. The default training task and the smoke results above remain RoboTwin; applying the initialization preset does not itself define or validate a real-robot training pipeline. Start from the [real-robot task template](configs/task/real_robot_template.yaml) and build the reconstruction cache with `scripts/build_reconstruction_cache.py`, as described in the [real-robot workflow](docs/REAL_ROBOT.md#workflow-for-your-robot).
 
-Real-robot geometry supervision is **depth only**. Future depth targets (offset 32) are metric pseudo-labels estimated by Depth Anything 3 with factory intrinsics; no depth sensor or camera extrinsics are used. Disable the camera and point-map losses by setting `official.camera.weight` and `official.point.weight` to `0.0` under `model.reconstruction_loss_config`. The official backend ignores the legacy `lambda_camera`/`lambda_point` keys, and the release defaults keep both terms at weight 5.0. The [real-robot recipe](docs/REAL_ROBOT.md) documents the data layout, reconstruction-cache format, and the post-training hyperparameters used for AgileX Piper and Zerith H1.
+Real-robot geometry supervision is **depth only**. Future depth targets (offset 32) are metric pseudo-labels estimated by Depth Anything 3 with factory intrinsics; no depth sensor or camera extrinsics are used. Disable the camera and point-map losses by setting `official.camera.weight` and `official.point.weight` to `0.0` under `model.reconstruction_loss_config`. The official backend ignores the legacy `lambda_camera`/`lambda_point` keys, and the release defaults keep both terms at weight 5.0. Depth supervision is normalized per sample (`normalize_gt: global`), so predicted depth is in scene-normalized units, not meters. The [real-robot recipe](docs/REAL_ROBOT.md) documents the data layout, depth normalization, reconstruction-cache format, and the post-training hyperparameters used for AgileX Piper and Zerith H1.
 
 ## Standalone inference
 
@@ -177,7 +177,7 @@ python scripts/infer.py \
   --reconstruction
 ```
 
-Place `dataset_stats.json` beside the checkpoint. Output `action` has shape `[32, 14]` in the original dataset units; `normalized_action` is provided for inspection. Omit `--reconstruction` when geometry outputs are not needed. Predicted depth uses the learned scene-normalized scale, not metres.
+Place `dataset_stats.json` beside the checkpoint. Output `action` has shape `[32, 14]` in the original dataset units; `normalized_action` is provided for inspection. Omit `--reconstruction` when geometry outputs are not needed. Predicted depth uses the learned scene-normalized scale, not metres. For a real-robot policy, pass its task file or the run's saved `config.yaml` as `--config`; the camera fields, state size and action size then follow that configuration (see [real-robot inference](docs/REAL_ROBOT.md#6-inference)).
 
 If the reference dataset is installed at the default path, `python scripts/make_example.py` extracts an observation into `examples/observation.npz`. Inference on your own observation does not require the training dataset or geometry ground truth.
 

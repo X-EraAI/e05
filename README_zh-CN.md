@@ -156,9 +156,9 @@ export E05_EMBODIED_VGGT_CHECKPOINT=/path/to/e05_embodied_vggt_step_260000.pt
 
 在真机任务的训练命令中追加 Hydra 参数 `+model_init=embodied_vggt`。[初始化配置](configs/model_init/embodied_vggt.yaml)通过 `model.vggt_backbone_pretrained_checkpoint_path` 加载该权重，并关闭公开 VGGT 和完整模型初始化。请勿将 VGGT-only 权重传给 `resume` 或 `model.pretrained_checkpoint_path`。
 
-该配置仅切换模型初始化。真机任务仍需配置对应的数据、归一化统计、相机顺序、action/state 维度和重建目标。默认训练任务及上述 smoke 结果仍为 RoboTwin；仅应用初始化配置，不代表已定义或验证完整的真机训练流程。
+该配置仅切换模型初始化。真机任务仍需配置对应的数据、归一化统计、相机顺序、action/state 维度和重建目标。默认训练任务及上述 smoke 结果仍为 RoboTwin；仅应用初始化配置，不代表已定义或验证完整的真机训练流程。可从[真机任务模板](configs/task/real_robot_template.yaml)开始，并用 `scripts/build_reconstruction_cache.py` 生成重建缓存，步骤见[真机流程](docs/REAL_ROBOT.md#workflow-for-your-robot)。
 
-真机的几何监督**只使用深度**：偏移 32 帧的未来深度目标是 Depth Anything 3 估计的米制伪标签，配合相机原厂内参；不使用深度传感器，也没有相机外参。训练时需在 `model.reconstruction_loss_config` 下把 `official.camera.weight` 和 `official.point.weight` 设为 `0.0`，以关闭相机与点图损失。official 后端会忽略旧的 `lambda_camera`/`lambda_point` 键；发布的默认配置中这两项权重均为 5.0。数据布局、重建缓存格式，以及 AgileX Piper 与 Zerith H1 的后训练超参数见[真机配方](docs/REAL_ROBOT.md)。
+真机的几何监督**只使用深度**：偏移 32 帧的未来深度目标是 Depth Anything 3 估计的米制伪标签，配合相机原厂内参；不使用深度传感器，也没有相机外参。训练时需在 `model.reconstruction_loss_config` 下把 `official.camera.weight` 和 `official.point.weight` 设为 `0.0`，以关闭相机与点图损失。official 后端会忽略旧的 `lambda_camera`/`lambda_point` 键；发布的默认配置中这两项权重均为 5.0。深度监督按样本做了场景归一化（`normalize_gt: global`），因此预测深度是场景归一化单位，而不是米制。数据布局、深度归一化、重建缓存格式，以及 AgileX Piper 与 Zerith H1 的后训练超参数见[真机配方](docs/REAL_ROBOT.md)。
 
 ## 独立推理
 
@@ -178,7 +178,7 @@ python scripts/infer.py \
   --reconstruction
 ```
 
-将 `dataset_stats.json` 放在 checkpoint 同级目录。输出包含形状为 `[32, 14]`、使用数据集原始单位的 `action`，以及用于检查的 `normalized_action`。不需要几何输出时，可省略 `--reconstruction`。预测深度采用模型学习的场景归一化尺度，不是米制深度。
+将 `dataset_stats.json` 放在 checkpoint 同级目录。输出包含形状为 `[32, 14]`、使用数据集原始单位的 `action`，以及用于检查的 `normalized_action`。不需要几何输出时，可省略 `--reconstruction`。预测深度采用模型学习的场景归一化尺度，不是米制深度。真机策略推理时，将其任务配置文件或训练保存的 `config.yaml` 传给 `--config`，相机字段、state 与 action 维度即按该配置读取（见[真机推理](docs/REAL_ROBOT.md#6-inference)）。
 
 如果参考数据已放在默认路径，可执行 `python scripts/make_example.py`，将一个观测提取至 `examples/observation.npz`。使用自己的观测进行推理时，不需要训练数据集或几何真值。
 

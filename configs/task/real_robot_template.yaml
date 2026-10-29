@@ -1,0 +1,149 @@
+# @package _global_
+#
+# Real-robot task template for E0.5 depth-only post-training.
+#
+# Copy this file to configs/task/<your_robot>.yaml and fill every `???` in the
+# `robot` block (and adjust the camera list under data.train.shape_meta.images
+# if you do not have three cameras). Then train with
+#
+#   export E05_EMBODIED_VGGT_CHECKPOINT=/path/to/e05_embodied_vggt_step_260000.pt
+#   bash scripts/train.sh +task=<your_robot> +model_init=embodied_vggt
+#
+# `scripts/train.sh` composes the flat `release` configuration (RoboTwin) and
+# merges this file on top of it; keys not listed here keep their release
+# values. `+model_init=embodied_vggt` loads the embodied-pretrained VGGT
+# (configs/model_init/embodied_vggt.yaml); omit it to start from the public
+# VGGT-Omega initialization.
+#
+# Why a separate `robot` block: when a merged file sets an existing key to
+# `???`, OmegaConf keeps the old value, so a placeholder written directly on a
+# release key would silently fall back to the RoboTwin setting. The keys below
+# instead reference `robot.*` with `${...}`, so any value left at `???` fails
+# with "Missing mandatory value: robot.<name>" when it is first read.
+# The camera order, action size and state size are also recorded in the
+# checkpoint; inference must use the same values (scripts/infer.py reads them
+# from this file or from the run's saved config.yaml).
+
+robot:
+  # One or more LeRobot v2.1 dataset roots (meta/, data/, videos/). All roots
+  # must share fps, feature names and vector sizes.
+  dataset_dirs: ???
+  # Cameras in VGGT order. Key `X` reads the video feature
+  # `observation.images.X`. The first camera is the reference view of the
+  # geometry loss. The model accepts any number of views (our recipe used
+  # three); views with different aspect ratios are padded to a common size.
+  # The same list, in the same order, must be passed to
+  # scripts/build_reconstruction_cache.py (--camera-keys), which records it in
+  # the cache manifest; the loader rejects a mismatch.
+  camera_keys: ???
+  # Number of entries in camera_keys.
+  num_cameras: ???
+  # Lengths of the `action` and `observation.state` vectors (their shapes in
+  # meta/info.json), e.g. 14 for two 6-DoF arms with grippers.
+  action_dim: ???
+  state_dim: ???
+  # Normalization statistics JSON (format of
+  # e05.datasets.lerobot.utils.normalizer.save_dataset_stats_to_json), or
+  # null to compute them from dataset_dirs when training starts; the main
+  # process then writes <output_dir>/dataset_stats.json for later runs and
+  # for inference.
+  norm_stats: ???
+  # Cached T5 instruction embeddings: one file per task string in
+  # meta/tasks.jsonl, named sha256(prompt).t5_len128.wan22ti2v5b.pt, where
+  # prompt = "A video recorded from a robot's point of view executing the
+  # following instruction: <task>". See docs/REAL_ROBOT.md.
+  text_embedding_cache_dir: ???
+  # One reconstruction cache per entry of dataset_dirs, same order, written
+  # by scripts/build_reconstruction_cache.py.
+  reconstruction_cache_roots: ???
+
+# Recipe used for our real-robot runs: 8 GPUs x batch_size 8 x 2 accumulation
+# steps = global batch 128. With fewer GPUs, raise gradient_accumulation_steps
+# to keep the global batch.
+batch_size: 8
+gradient_accumulation_steps: 2
+num_epochs: 5
+optimizer_grouping: legacy  # the release default, listed because the recipe used it
+
+data:
+  dataset_name: real_robot
+  train:
+    dataset_name: real_robot
+    dataset_dirs: ${robot.dataset_dirs}
+    # One entry per camera, in the order of robot.camera_keys; add or remove
+    # entries to match your camera count. `shape` is the frame size after
+    # processor.train_transforms (release: Resize to 240x320) and is checked;
+    # these resized frames only build the auxiliary `video` tensor, which the
+    # E05 training loss does not read. `raw_shape` is informational.
+    # Action/state key `default` reads the `action` / `observation.state`
+    # columns; keep a single key each (inference expects one vector).
+    shape_meta:
+      images:
+      - key: ${robot.camera_keys[0]}
+        raw_shape: [3, 480, 640]
+        shape: [3, 240, 320]
+      - key: ${robot.camera_keys[1]}
+        raw_shape: [3, 480, 640]
+        shape: [3, 240, 320]
+      - key: ${robot.camera_keys[2]}
+        raw_shape: [3, 480, 640]
+        shape: [3, 240, 320]
+      action:
+      - key: default
+        raw_shape: ${robot.action_dim}
+        shape: ${robot.action_dim}
+      state:
+      - key: default
+        raw_shape: ${robot.state_dim}
+        shape: ${robot.state_dim}
+    # Tiling of the auxiliary `video` tensor. `robotwin` (used in our
+    # three-camera runs) requires exactly three cameras; `horizontal` and
+    # `vertical` accept any number. Only data-loading cost depends on it.
+    concat_multi_camera: horizontal
+    pretrained_norm_stats: ${robot.norm_stats}
+    text_embedding_cache_dir: ${robot.text_embedding_cache_dir}
+    # Train on every episode (release default). The per-dataset cache roots
+    # below map loader rows to the dataset's `index` column, so they also stay
+    # correct with a validation split or `episode_ranges`.
+    val_set_proportion: 0.0
+    processor:
+      shape_meta: ${data.train.shape_meta}
+      num_output_cameras: ${robot.num_cameras}
+      action_output_dim: ${robot.action_dim}
+      proprio_output_dim: ${robot.state_dim}
+      vggt_camera_keys: ${robot.camera_keys}
+      # 4:3 frames become 224x288 VGGT inputs at this setting. Pass the same
+      # value to scripts/build_reconstruction_cache.py (--vggt-image-size).
+      vggt_image_size: 256
+      # Our real-robot runs used no VGGT appearance augmentation; the release
+      # (RoboTwin) configuration enables DomainRandomization here.
+      vggt_augmentation: null
+    # Future geometry target at t+32, the end of the 32-step action chunk.
+    reconstruction_targets: true
+    reconstruction_future_frame_index: 32
+    reconstruction_allow_missing: false
+    reconstruction_cache_root: null
+    reconstruction_cache_roots: ${robot.reconstruction_cache_roots}
+    # true enables the official surface-normal auxiliary depth loss
+    # (apply_aux_loss_to_synthetic_only). Our runs kept true with smooth
+    # Depth Anything 3 pseudo-labels; use false for raw sensor depth.
+    reconstruction_is_synthetic: true
+
+model:
+  vggt_camera_keys: ${robot.camera_keys}
+  proprio_dim: ${robot.state_dim}
+  action_dit_config:
+    action_dim: ${robot.action_dim}
+  # Depth-only geometry supervision. With placeholder (identity) extrinsics
+  # the camera and point-map terms are meaningless, so their official
+  # weights are 0.
+  lambda_vggt_recon: 0.01
+  reconstruction_loss_config:
+    backend: official
+    official:
+      camera: {weight: 0.0}
+      point: {weight: 0.0}
+    # Ignored by the official backend but recorded in checkpoint metadata.
+    # Our real-robot runs used these values.
+    lambda_camera: 0.0
+    lambda_point: 0.0
