@@ -158,6 +158,8 @@ export E05_EMBODIED_VGGT_CHECKPOINT=/path/to/e05_embodied_vggt_step_260000.pt
 
 该配置仅切换模型初始化。真机任务仍需配置对应的数据、归一化统计、相机顺序、action/state 维度和重建目标。默认训练任务及上述 smoke 结果仍为 RoboTwin；仅应用初始化配置，不代表已定义或验证完整的真机训练流程。
 
+真机的几何监督**只使用深度**：偏移 32 帧的未来深度目标是 Depth Anything 3 估计的米制伪标签，配合相机原厂内参；不使用深度传感器，也没有相机外参。训练时需在 `model.reconstruction_loss_config` 下把 `official.camera.weight` 和 `official.point.weight` 设为 `0.0`，以关闭相机与点图损失。official 后端会忽略旧的 `lambda_camera`/`lambda_point` 键；发布的默认配置中这两项权重均为 5.0。数据布局、重建缓存格式，以及 AgileX Piper 与 Zerith H1 的后训练超参数见[真机配方](docs/REAL_ROBOT.md)。
+
 ## 独立推理
 
 准备包含以下字段的 NPZ 观测文件：

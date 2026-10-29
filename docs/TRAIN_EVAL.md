@@ -95,3 +95,11 @@ Do not use the VGGT-only file as `resume`, `model.pretrained_checkpoint_path`,
 or an inference policy checkpoint. See [checkpoint resources](CHECKPOINTS.md)
 for the manifest, extraction and loading details. The eight-GPU smoke results
 in this document apply to RoboTwin, not real-robot training.
+
+Real-robot post-training supervises future geometry with depth only:
+Depth Anything 3 metric pseudo-labels with factory intrinsics, and no
+extrinsics. Set `official.camera.weight: 0.0` and `official.point.weight: 0.0`
+under `model.reconstruction_loss_config`. The official backend ignores the
+legacy `lambda_*` keys, and the release defaults keep both terms at 5.0. The data layout,
+reconstruction-cache format and hyperparameters are in the
+[real-robot recipe](REAL_ROBOT.md).

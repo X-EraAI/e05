@@ -157,6 +157,8 @@ Add `+model_init=embodied_vggt` to the Hydra overrides of your real-robot traini
 
 This preset changes model initialization only. Supply a real-robot task configuration with the appropriate data, normalization, camera order, action/state dimensions, and reconstruction targets. The default training task and the smoke results above remain RoboTwin; applying the initialization preset does not itself define or validate a real-robot training pipeline.
 
+Real-robot geometry supervision is **depth only**. Future depth targets (offset 32) are metric pseudo-labels estimated by Depth Anything 3 with factory intrinsics; no depth sensor or camera extrinsics are used. Disable the camera and point-map losses by setting `official.camera.weight` and `official.point.weight` to `0.0` under `model.reconstruction_loss_config`. The official backend ignores the legacy `lambda_camera`/`lambda_point` keys, and the release defaults keep both terms at weight 5.0. The [real-robot recipe](docs/REAL_ROBOT.md) documents the data layout, reconstruction-cache format, and the post-training hyperparameters used for AgileX Piper and Zerith H1.
+
 ## Standalone inference
 
 Prepare an NPZ observation with these fields:
