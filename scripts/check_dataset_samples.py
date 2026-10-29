@@ -4,8 +4,10 @@ from pathlib import Path
 import torch
 from omegaconf import OmegaConf
 from hydra.utils import instantiate
+from e05.utils.misc import register_work_dir
 
 def main():
+    register_work_dir('outputs/validation')
     cfg = OmegaConf.load('configs/release.yaml')
     ds = instantiate(cfg.data.train)
     rows = []

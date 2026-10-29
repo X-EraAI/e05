@@ -19,6 +19,7 @@ def main():
    def filt(info):
     parts=Path(info.name).parts
     if any(x in parts for x in ['__pycache__','.git','.pytest_cache']):return None
+    if any(x.endswith('.egg-info') for x in parts):return None
     if info.name.startswith('E05/third_party/RoboTwin/assets'):return None
     if info.name == 'E05/scripts/regression.sh':return None
     if info.name.endswith(('.pyc','.so','.log')):return None
