@@ -12,6 +12,12 @@ Official implementation of **E0.5**, a world-action model that places 3D foundat
 
 This repository provides the E0.5 implementation, training and inference workflows, and RoboTwin evaluation tools. Released resources include the RoboTwin policy checkpoint, processed training data, and an embodied-pretrained VGGT backbone for real-robot adaptation. The Python package and configuration entrypoints use the name `e05`; resource requirements and usage instructions are detailed below.
 
+## Research team
+
+The [E0.5 paper](https://arxiv.org/abs/2610.36011) credits **X-Era AI Lab Team**, with the following authors in the published order:
+
+Jianhao Lai, Zhihao Zhan, Zhiquan Liao, Qichang Li, Shubin Chen, Zhiyuan Liu, Hongsen Lei, Jianman Lin, Xiaoxin Lin, Ke Gong, Baiyue Gu, Shiming Chen, Junlin He, Longqi Yang, Junrong Xiao, Haolin Luo, Xiaojuan Su, Jianfeng Li, Yu Luo, Xu Sun, Likui Zhang, [Jusheng Zhang](https://github.com/jushengzhang), Qinhan Lyu, Tianshui Chen, Liang Lin, Guangrun Wang.
+
 ## Model overview
 
 | Component | Specification |
