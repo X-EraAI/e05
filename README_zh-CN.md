@@ -14,6 +14,12 @@
 
 本仓库提供 E0.5 模型实现、训练与推理流程，以及 RoboTwin 评测工具。公开资源包括 RoboTwin 策略权重、处理好的训练数据，以及用于真机任务适配的具身预训练 VGGT 骨干权重。Python 包和配置入口沿用 `e05` 命名；资源需求与使用方法详见下文。
 
+## 研究团队
+
+[E0.5 论文](https://arxiv.org/abs/2610.36011)署名为 **X-Era AI Lab Team**，以下作者名单与公开论文的顺序一致：
+
+Jianhao Lai, Zhihao Zhan, Zhiquan Liao, Qichang Li, Shubin Chen, Zhiyuan Liu, Hongsen Lei, Jianman Lin, Xiaoxin Lin, Ke Gong, Baiyue Gu, Shiming Chen, Junlin He, Longqi Yang, Junrong Xiao, Haolin Luo, Xiaojuan Su, Jianfeng Li, Yu Luo, Xu Sun, Likui Zhang, [Jusheng Zhang](https://github.com/jushengzhang), Qinhan Lyu, Tianshui Chen, Liang Lin, Guangrun Wang.
+
 ## 模型概览
 
 | 组成 | 规格 |
